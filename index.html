@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PlantFit Pro — сервис подбора растений под реальные условия вашего пространства.">
+  <title>PlantFit Pro | Умный подбор растений</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home">PlantFit Pro</a>
+      <nav>
+        <a href="#about">О проекте</a>
+        <a href="#features">Возможности</a>
+        <a href="#how">Как это работает</a>
+      </nav>
+      <a class="btn btn-small" href="plant_selector_catalog_v6_photos_lux_fixed.html">Открыть каталог</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="badge">Новый уровень подбора растений</p>
+          <h1>Подберите идеальное растение под ваш интерьер за пару минут</h1>
+          <p class="lead">
+            PlantFit Pro учитывает освещенность, влажность, температуру, сложность ухода и безопасность для питомцев.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="plant_selector_catalog_v6_photos_lux_fixed.html">Начать подбор</a>
+            <button id="showProfileForm" class="btn btn-ghost" type="button">Быстрый старт</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Быстрый профиль помещения</h2>
+          <p>Выберите готовый сценарий, и мы сразу откроем каталог с нужными параметрами.</p>
+          <form id="quickStartForm">
+            <label for="profile">Профиль</label>
+            <select id="profile" name="profile" required>
+              <option value="livingRoom">Гостиная с рассеянным светом</option>
+              <option value="darkOffice">Тёмный офис / северное окно</option>
+              <option value="sunnyWindow">Солнечное окно</option>
+              <option value="bathroom">Влажная ванная</option>
+              <option value="restaurant">Ресторан / коммерческий объект</option>
+              <option value="pets">Дом с питомцами</option>
+            </select>
+            <button class="btn w-full" type="submit">Перейти к рекомендациям</button>
+          </form>
+          <p class="hint">Форма сохраняет профиль и открывает рабочий каталог.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>Зачем нужен PlantFit Pro</h2>
+        <p>
+          Сервис избавляет от случайного выбора растений. Вместо "красиво выглядит" вы получаете
+          понятный подбор с объяснением, почему именно это растение подойдет под ваши условия.
+        </p>
+      </div>
+    </section>
+
+    <section id="features" class="section section-soft">
+      <div class="container">
+        <h2>Ключевые возможности</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Персональные рекомендации</h3>
+            <p>Система учитывает свет, влажность, температуру и ограничения по уходу.</p>
+          </article>
+          <article class="card">
+            <h3>Безопасность для питомцев</h3>
+            <p>Отдельные теги и фильтры для выбора более безопасных вариантов.</p>
+          </article>
+          <article class="card">
+            <h3>Сравнение и избранное</h3>
+            <p>Собирайте растения в избранное, сравнивайте и экспортируйте подборку.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <div class="container">
+        <h2>Как это работает</h2>
+        <ol class="steps">
+          <li>Вы задаете параметры помещения или выбираете готовый профиль.</li>
+          <li>PlantFit Pro оценивает совместимость условий с каталогом растений.</li>
+          <li>Вы получаете рекомендации с подсказками по уходу и улучшению условий.</li>
+        </ol>
+        <a class="btn" href="plant_selector_catalog_v6_photos_lux_fixed.html">Перейти в приложение</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>PlantFit Pro v6. Локальный проект для подбора растений.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/landing.js"></script>
+</body>
+</html>
