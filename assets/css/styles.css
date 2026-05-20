@@ -155,8 +155,10 @@ nav a {
 }
 
 .onboarding-grid {
+  --onboarding-card-min-h: 11.25rem;
   display: grid;
   grid-template-columns: 1fr;
+  align-items: stretch;
   gap: 0.65rem;
   width: 100%;
   margin: 0 auto;
@@ -165,8 +167,10 @@ nav a {
 }
 
 .onboarding-grid__item {
+  display: flex;
   margin: 0;
   min-width: 0;
+  min-height: var(--onboarding-card-min-h);
 }
 
 .onboarding-card {
@@ -175,13 +179,15 @@ nav a {
   appearance: none;
   -webkit-appearance: none;
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: 0.65rem;
   width: 100%;
-  min-height: 0;
-  padding: 1rem 0.9rem 1.05rem;
+  min-height: var(--onboarding-card-min-h);
+  height: 100%;
+  padding: 1rem 0.75rem 1.05rem;
   text-align: center;
   font: inherit;
   color: inherit;
@@ -286,14 +292,19 @@ nav a {
 
 .onboarding-card__copy {
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
-  gap: 0.15rem;
+  justify-content: flex-start;
+  gap: 0.2rem;
   width: 100%;
+  min-height: 4.85rem;
 }
 
 .onboarding-card__headline {
   display: block;
+  width: 100%;
+  min-height: 2.5em;
   font-size: 0.9375rem;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -303,6 +314,8 @@ nav a {
 
 .onboarding-card__subtitle {
   display: block;
+  width: 100%;
+  min-height: 2.7em;
   font-size: 0.8125rem;
   font-weight: 500;
   line-height: 1.35;
