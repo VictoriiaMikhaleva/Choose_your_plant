@@ -19,6 +19,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
@@ -37,33 +41,91 @@ body {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(243, 247, 239, 0.96);
-  border-bottom: 1px solid var(--line);
+  background: rgba(251, 252, 249, 0.92);
+  border-bottom: 1px solid rgba(23, 32, 24, 0.06);
+  backdrop-filter: blur(10px);
 }
 
-.nav {
+.site-header__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 72px;
+  gap: 0.75rem 1rem;
+  min-height: 4rem;
 }
 
 .brand {
-  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
   text-decoration: none;
   color: var(--text);
 }
 
-nav {
-  display: flex;
-  gap: 1rem;
+.brand__mark {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1.15rem;
+  background: #edf5e9;
+  border: 1px solid #dbe7d8;
+  border-radius: 12px;
 }
 
-nav a {
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  min-width: 0;
+}
+
+.brand__name {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.brand__tag {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+  margin-left: auto;
+}
+
+.site-nav a {
+  font-size: 0.875rem;
+  font-weight: 600;
   color: var(--muted);
   text-decoration: none;
-  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: var(--brand-dark);
+}
+
+.site-nav a:focus-visible {
+  outline: none;
+  color: var(--brand-dark);
+  box-shadow: 0 2px 0 var(--brand);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 /* ——— Hero: scenario-first onboarding ——— */
@@ -806,11 +868,26 @@ h2 {
   }
 }
 
-@media (max-width: 900px) {
-  nav {
+@media (max-width: 768px) {
+  .site-nav {
     display: none;
   }
 
+  .brand__tag {
+    display: none;
+  }
+
+  .site-header__inner {
+    min-height: 3.5rem;
+  }
+
+  .site-header__actions .btn-small {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 900px) {
   .cards:not(.features-grid) {
     grid-template-columns: 1fr;
   }
