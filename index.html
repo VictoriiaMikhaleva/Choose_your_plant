@@ -15,7 +15,6 @@
     <div class="container nav">
       <a class="brand" href="#home">Подбор растений для профи</a>
       <nav>
-        <a href="#about">О проекте</a>
         <a href="#features">Возможности</a>
         <a href="#how">Как это работает</a>
       </nav>
@@ -138,33 +137,85 @@
       </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="features" class="section section-soft section-features" aria-labelledby="features-title">
       <div class="container">
-        <h2>Зачем нужен сервис "Подбор растений для профи"</h2>
-        <p>
-          Сервис избавляет от случайного выбора растений. 
-          Понятный подбор с объяснением, почему именно это растение подойдет под ваши условия и будет жить, а не медленно умирать.
-        </p>
-      </div>
-    </section>
+        <header class="features__header">
+          <h2 id="features-title" class="features__title">
+            Подбор, в котором растениям хорошо у вас дома
+            <span class="features__title-accent" aria-hidden="true">🌿</span>
+          </h2>
+          <p class="features__lead">
+            Без случайного выбора из магазина. Понятные рекомендации — почему растение подойдёт
+            и что сделать, чтобы оно жило, а не чахло.
+          </p>
+        </header>
 
-    <section id="features" class="section section-soft">
-      <div class="container">
-        <h2>Ключевые возможности</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Персональные рекомендации</h3>
-            <p>Система учитывает свет, влажность, температуру и ограничения по уходу.</p>
+        <div class="cards features-grid">
+          <article class="card feature-card feature-card--climate">
+            <div class="feature-card__visual" aria-hidden="true">
+              <span class="feature-card__glow"></span>
+              <span class="feature-card__hero-emoji">🌿</span>
+              <span class="feature-card__chip">☀️</span>
+              <span class="feature-card__chip feature-card__chip--b">💧</span>
+              <span class="feature-card__chip feature-card__chip--c">🌡️</span>
+            </div>
+            <div class="feature-card__body">
+              <h3>Под ваш свет и климат</h3>
+              <p>Учитываем освещённость, влажность и температуру — без догадок и сложных таблиц.</p>
+            </div>
+            <p class="feature-card__badge">
+              <span class="feature-card__badge-icon" aria-hidden="true">✓</span>
+              Только подходящие варианты
+            </p>
           </article>
-          <article class="card">
-            <h3>Безопасность для питомцев</h3>
-            <p>Отдельные теги и фильтры для выбора более безопасных вариантов.</p>
+
+          <article class="card feature-card feature-card--pets">
+            <div class="feature-card__visual" aria-hidden="true">
+              <span class="feature-card__glow"></span>
+              <span class="feature-card__hero-emoji">🐈</span>
+              <span class="feature-card__chip">🌱</span>
+            </div>
+            <div class="feature-card__body">
+              <h3>Безопасно для питомцев</h3>
+              <p>Подскажем растения, которые лучше подходят, если дома есть кошки или собаки.</p>
+            </div>
+            <p class="feature-card__badge">
+              <span class="feature-card__badge-icon" aria-hidden="true">✓</span>
+              Фильтр pet-friendly
+            </p>
           </article>
-          <article class="card">
-            <h3>Сравнение и избранное</h3>
-            <p>Собирайте растения в избранное, сравнивайте и экспортируйте подборку.</p>
+
+          <article class="card feature-card feature-card--tools">
+            <div class="feature-card__visual" aria-hidden="true">
+              <span class="feature-card__glow"></span>
+              <span class="feature-card__hero-emoji">⭐</span>
+              <span class="feature-card__chip">📋</span>
+            </div>
+            <div class="feature-card__body">
+              <h3>Сохраняйте и сравнивайте</h3>
+              <p>Избранное, сравнение до трёх растений и экспорт списка — удобно решать вместе.</p>
+            </div>
+            <p class="feature-card__badge">
+              <span class="feature-card__badge-icon" aria-hidden="true">✓</span>
+              Ваша короткая подборка
+            </p>
           </article>
         </div>
+
+        <aside class="features-trust" aria-label="Почему нам можно доверять">
+          <div class="features-trust__item">
+            <span class="features-trust__icon" aria-hidden="true">🌿</span>
+            <p><strong>Каталог Елены Носовой</strong><span>Проверенные данные по уходу и условиям</span></p>
+          </div>
+          <div class="features-trust__item">
+            <span class="features-trust__icon" aria-hidden="true">📊</span>
+            <p><strong>Оценка по 100 баллам</strong><span>Понятно, насколько растение подходит вам</span></p>
+          </div>
+          <div class="features-trust__item">
+            <span class="features-trust__icon" aria-hidden="true">⚡</span>
+            <p><strong>Подбор за минуту</strong><span>Выберите ситуацию — каталог уже настроен</span></p>
+          </div>
+        </aside>
       </div>
     </section>
 
