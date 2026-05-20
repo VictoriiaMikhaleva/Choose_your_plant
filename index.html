@@ -19,44 +19,86 @@
         <a href="#features">Возможности</a>
         <a href="#how">Как это работает</a>
       </nav>
-      <a class="btn btn-small" href="plant_selector_catalog_v6_photos_lux_fixed.html">Открыть каталог</a>
+      <a class="btn btn-small btn-ghost" href="plant_selector_catalog_v6_photos_lux_fixed.html">Каталог</a>
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="badge">Новый уровень подбора растений</p>
-          <div class="catalog-author">
-  🌿 На базе каталога Елены Носовой
-</div>
-          <h1>Подберите идеальное растение под ваш интерьер за пару минут</h1>
-          <p class="lead">
-            Подбор растений для профи учитывает освещенность, влажность, температуру, сложность ухода и безопасность для питомцев.
+  <main>
+    <section class="hero hero--scenario" id="home" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <header class="hero__intro">
+          <p class="hero__eyebrow">
+            <span class="hero__eyebrow-icon" aria-hidden="true">🌿</span>
+            На базе каталога Елены Носовой
           </p>
-          <div class="hero-actions">
-            <a class="btn" href="plant_selector_catalog_v6_photos_lux_fixed.html">Начать подбор</a>
-            <button id="showProfileForm" class="btn btn-ghost" type="button">Быстрый старт</button>
+          <h1 id="hero-title">Подберите растение, которое действительно выживет у вас дома</h1>
+          <p class="hero__lead">
+            Без сложных таблиц и случайного выбора — сервис учитывает свет, влажность, уход и питомцев.
+          </p>
+        </header>
+
+        <div class="hero__primary" id="quickStart">
+          <div class="hero__primary-head">
+            <h2 class="hero__picker-title">Выберите вашу ситуацию</h2>
+            <p class="hero__picker-hint">Один клик — и каталог уже настроен под вас</p>
           </div>
+
+          <div class="scenario-grid" role="group" aria-label="Сценарии подбора растений">
+            <button type="button" class="scenario-card" data-profile="darkOffice" data-scenario="dark">
+              <span class="scenario-card__icon" aria-hidden="true">🌑</span>
+              <span class="scenario-card__label">Тёмная квартира</span>
+              <span class="scenario-card__meta">мало света, простой уход</span>
+            </button>
+            <button type="button" class="scenario-card" data-profile="pets" data-scenario="pets">
+              <span class="scenario-card__icon" aria-hidden="true">🐈</span>
+              <span class="scenario-card__label">Дом с питомцами</span>
+              <span class="scenario-card__meta">безопаснее для животных</span>
+            </button>
+            <button type="button" class="scenario-card" data-profile="sunnyWindow" data-scenario="sun">
+              <span class="scenario-card__icon" aria-hidden="true">☀️</span>
+              <span class="scenario-card__label">Солнечное окно</span>
+              <span class="scenario-card__meta">много света у окна</span>
+            </button>
+            <button type="button" class="scenario-card" data-profile="livingRoom" data-scenario="easy">
+              <span class="scenario-card__icon" aria-hidden="true">🪴</span>
+              <span class="scenario-card__label">Неприхотливые растения</span>
+              <span class="scenario-card__meta">спокойный уход, без капризов</span>
+            </button>
+            <button type="button" class="scenario-card" data-profile="restaurant" data-scenario="office">
+              <span class="scenario-card__icon" aria-hidden="true">🏢</span>
+              <span class="scenario-card__label">Для офиса</span>
+              <span class="scenario-card__meta">устойчивые, рабочая среда</span>
+            </button>
+            <button type="button" class="scenario-card" data-profile="livingRoom" data-scenario="large">
+              <span class="scenario-card__icon" aria-hidden="true">🌿</span>
+              <span class="scenario-card__label">Большое растение в интерьер</span>
+              <span class="scenario-card__meta">крупный акцент в комнате</span>
+            </button>
+          </div>
+
+          <p class="hero__live" id="scenarioStatus" role="status" aria-live="polite"></p>
         </div>
-        <div class="hero-card">
-          <h2>Быстрый профиль помещения</h2>
-          <p>Выберите готовый сценарий, и мы сразу откроем каталог с нужными параметрами.</p>
-          <form id="quickStartForm">
-            <label for="profile">Профиль</label>
-            <select id="profile" name="profile" required>
-              <option value="livingRoom">Гостиная с рассеянным светом</option>
-              <option value="darkOffice">Тёмный офис / северное окно</option>
-              <option value="sunnyWindow">Солнечное окно</option>
-              <option value="bathroom">Влажная ванная</option>
-              <option value="restaurant">Ресторан / коммерческий объект</option>
-              <option value="pets">Дом с питомцами</option>
-            </select>
-            <button class="btn w-full" type="submit">Перейти к рекомендациям</button>
-          </form>
-          <p class="hint">Форма сохраняет профиль и открывает рабочий каталог.</p>
-        </div>
+
+        <footer class="hero__secondary">
+          <a class="btn btn-ghost btn-secondary-catalog" href="plant_selector_catalog_v6_photos_lux_fixed.html">
+            Открыть каталог
+          </a>
+          <span class="hero__secondary-note">для ручной настройки параметров</span>
+        </footer>
+
+        <!-- Fallback: без JS и для assistive tech -->
+        <form id="quickStartForm" class="visually-hidden" hidden>
+          <label for="profile">Профиль</label>
+          <select id="profile" name="profile">
+            <option value="darkOffice">Тёмная квартира / офис</option>
+            <option value="pets">Дом с питомцами</option>
+            <option value="sunnyWindow">Солнечное окно</option>
+            <option value="livingRoom">Гостиная / интерьер</option>
+            <option value="restaurant">Коммерческий объект</option>
+            <option value="bathroom">Влажная ванная</option>
+          </select>
+          <button type="submit">Перейти к рекомендациям</button>
+        </form>
       </div>
     </section>
 
