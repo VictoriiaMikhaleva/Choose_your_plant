@@ -1,7 +1,7 @@
 const CATALOG_URL = "plant_selector_catalog_v6_photos_lux_fixed.html";
 const quickStartForm = document.getElementById("quickStartForm");
 const scenarioStatus = document.getElementById("scenarioStatus");
-const scenarioCards = document.querySelectorAll(".scenario-card[data-profile]");
+const scenarioCards = document.querySelectorAll(".onboarding-card[data-profile]");
 
 const SCENARIO_LABELS = {
   dark: "Тёмная квартира",
@@ -33,7 +33,7 @@ function setScenarioStatus(message) {
 function handleScenarioSelect(card) {
   const profile = card.dataset.profile;
   const scenario = card.dataset.scenario;
-  const label = SCENARIO_LABELS[scenario] || card.querySelector(".scenario-card__label")?.textContent;
+  const label = SCENARIO_LABELS[scenario] || card.querySelector(".onboarding-card__headline")?.textContent;
 
   if (!profile) {
     return;
