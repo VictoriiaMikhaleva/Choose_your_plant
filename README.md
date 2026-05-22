@@ -40,6 +40,14 @@ npm run photos:normalize
 npm run photos:renormalize
 ```
 
+### Автоподбор с Wikimedia Commons
+
+```bash
+npm run photos:commons
+```
+
+Подбирает фото по латинскому названию (лицензии CC/PD), нормализует и пишет `assets/plants/attribution.json`. Подробнее — `assets/plants/PHOTOS_SOURCES.md`.
+
 Дополнительные 5 растений из JPG в корне проекта:
 
 ```bash
