@@ -455,14 +455,18 @@ h1 {
   background: var(--brand);
   color: #fff;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
-.btn:hover {
+.btn:not(.btn-ghost):hover {
   background: var(--brand-dark);
 }
 
-.btn:focus-visible {
+.btn:not(.btn-ghost):focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px rgba(47, 125, 79, 0.25);
 }
@@ -476,6 +480,21 @@ h1 {
   background: #fff;
   color: var(--brand-dark);
   border: 1px solid var(--line);
+}
+
+.btn-ghost:hover {
+  background: #edf5e9;
+  color: var(--brand-dark);
+  border-color: rgba(47, 125, 79, 0.35);
+  box-shadow: 0 4px 14px rgba(47, 125, 79, 0.14);
+  transform: translateY(-1px);
+}
+
+.btn-ghost:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(47, 125, 79, 0.2),
+    0 4px 14px rgba(47, 125, 79, 0.1);
 }
 
 .w-full {

@@ -108,7 +108,12 @@
   font-size: 0.875rem;
   text-decoration: none;
   cursor: pointer;
-  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .catalog-page .btn-small {
@@ -133,10 +138,36 @@
   border: 1px solid var(--line);
 }
 
+.catalog-page .btn-ghost:hover,
+.catalog-page .btn.ghost:hover {
+  background: #edf5e9;
+  color: var(--brand-dark);
+  border-color: rgba(47, 125, 79, 0.35);
+  box-shadow: 0 4px 14px rgba(47, 125, 79, 0.14);
+  transform: translateY(-1px);
+}
+
 .catalog-page .btn.secondary {
   background: #edf5e9;
   color: var(--brand-dark);
   border: 1px solid var(--line);
+}
+
+.catalog-page .btn.secondary:hover {
+  background: var(--brand-dark);
+  color: #fff;
+  border-color: var(--brand-dark);
+  box-shadow: 0 4px 14px rgba(47, 125, 79, 0.22);
+  transform: translateY(-1px);
+}
+
+.catalog-page .btn.secondary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(47, 125, 79, 0.25);
+}
+
+.catalog-page .filters-actions .btn.secondary:hover {
+  box-shadow: 0 4px 14px rgba(47, 125, 79, 0.22);
 }
 
 /* ——— Catalog hero ——— */
@@ -668,6 +699,11 @@
   min-width: 7rem;
   border-radius: 999px;
   box-shadow: 0 4px 14px rgba(47, 125, 79, 0.22);
+}
+
+.catalog-page .filters-btn-submit:hover {
+  box-shadow: 0 6px 18px rgba(47, 125, 79, 0.28);
+  transform: translateY(-1px);
 }
 
 .catalog-page .filters-actions .btn.secondary {
