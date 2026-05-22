@@ -4,13 +4,11 @@
  */
 const fs = require("fs");
 const path = require("path");
-const sharp = require("sharp");
+const { normalizeToWhiteCanvas } = require("./photo-normalize-lib");
 
 const ROOT = path.join(__dirname, "..");
 const CATALOG = path.join(ROOT, "plant_selector_catalog_v6_photos_lux_fixed.html");
 const OUT_DIR = path.join(ROOT, "assets", "plants");
-const CANVAS_W = 800;
-const CANVAS_H = 600;
 
 const EXTRA = [
   {
@@ -104,31 +102,6 @@ const EXTRA = [
       "Компактное цветущее растение с бархатистыми листьями и длительным цветением при рассеянном свете. Полив тёплой отстоянной водой в поддон; не мочите розетку и не ставьте на прямое солнце — листья получают ожоги.",
   },
 ];
-
-async function normalizeToWhiteCanvas(inputBuffer) {
-  const base = sharp(inputBuffer).rotate().flatten({ background: "#ffffff" });
-  const meta = await base.metadata();
-  const w = meta.width || CANVAS_W;
-  const h = meta.height || CANVAS_H;
-  const scale = Math.min(CANVAS_W / w, CANVAS_H / h, 1);
-  const nw = Math.max(1, Math.round(w * scale));
-  const nh = Math.max(1, Math.round(h * scale));
-  const padTop = Math.floor((CANVAS_H - nh) / 2);
-  const padBottom = CANVAS_H - nh - padTop;
-  const padLeft = Math.floor((CANVAS_W - nw) / 2);
-  const padRight = CANVAS_W - nw - padLeft;
-
-  return base
-    .resize(nw, nh, { fit: "inside", withoutEnlargement: true })
-    .extend({
-      top: padTop,
-      bottom: padBottom,
-      left: padLeft,
-      right: padRight,
-      background: "#ffffff",
-    })
-    .webp({ quality: 82, effort: 4 });
-}
 
 function loadPlants(html) {
   const m = html.match(/const RAW_PLANTS = (\[[\s\S]*?\]);/);
