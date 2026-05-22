@@ -111,21 +111,7 @@
 <div class="filters-panes">
 <fieldset class="filters-pane is-active" id="filtersPaneRoom" role="tabpanel" aria-labelledby="filtersTabRoom">
 <legend class="visually-hidden">Помещение</legend>
-<div class="filters-field filters-field--profile">
-<label class="filters-label" for="profile">Быстрый профиль</label>
-<div class="filters-select-wrap">
-<select id="profile" class="filters-select">
-<option value="custom">Свои параметры</option>
-<option value="darkOffice">Тёмный офис / северное окно</option>
-<option value="livingRoom">Гостиная с рассеянным светом</option>
-<option value="sunnyWindow">Солнечное окно</option>
-<option value="bathroom">Влажная ванная</option>
-<option value="restaurant">Ресторан / коммерческий объект</option>
-<option value="pets">Дом с питомцами</option>
-<option value="largePlant">Крупное растение в интерьер</option>
-</select>
-</div>
-</div>
+<input type="hidden" id="profile" value="custom">
 <div class="param-grid">
 <div class="param-card" data-param="light">
 <div class="param-card__head">
@@ -136,9 +122,13 @@
 </div>
 <output class="param-card__value" id="lightValue" for="light lightRange">2500</output>
 </div>
-<div class="slider param-card__controls">
-<input id="light" class="param-card__number" type="number" min="0" max="16000" step="100" value="2500">
-<input id="lightRange" class="param-card__range" type="range" min="0" max="16000" step="100" value="2500" aria-label="Свет">
+<div class="param-card__controls">
+<div class="param-card__input-row">
+<input id="light" class="param-card__number" type="number" min="0" max="16000" step="100" value="2500" aria-label="Свет, люкс">
+</div>
+<div class="param-card__track">
+<input id="lightRange" class="param-card__range" type="range" min="0" max="16000" step="100" value="2500" aria-label="Свет, шкала">
+</div>
 </div>
 </div>
 <div class="param-card" data-param="humidity">
@@ -150,9 +140,13 @@
 </div>
 <output class="param-card__value" id="humidityValue" for="humidity humidityRange">50</output>
 </div>
-<div class="slider param-card__controls">
-<input id="humidity" class="param-card__number" type="number" min="10" max="100" value="50">
-<input id="humidityRange" class="param-card__range" type="range" min="10" max="100" value="50" aria-label="Влажность">
+<div class="param-card__controls">
+<div class="param-card__input-row">
+<input id="humidity" class="param-card__number" type="number" min="10" max="100" value="50" aria-label="Влажность, проценты">
+</div>
+<div class="param-card__track">
+<input id="humidityRange" class="param-card__range" type="range" min="10" max="100" value="50" aria-label="Влажность, шкала">
+</div>
 </div>
 </div>
 <div class="param-card" data-param="temp">
@@ -164,9 +158,13 @@
 </div>
 <output class="param-card__value" id="tempValue" for="temp tempRange">22</output>
 </div>
-<div class="slider param-card__controls">
-<input id="temp" class="param-card__number" type="number" min="5" max="40" value="22">
-<input id="tempRange" class="param-card__range" type="range" min="5" max="40" value="22" aria-label="Температура">
+<div class="param-card__controls">
+<div class="param-card__input-row">
+<input id="temp" class="param-card__number" type="number" min="5" max="40" value="22" aria-label="Температура, градусы">
+</div>
+<div class="param-card__track">
+<input id="tempRange" class="param-card__range" type="range" min="5" max="40" value="22" aria-label="Температура, шкала">
+</div>
 </div>
 </div>
 </div>
@@ -294,7 +292,7 @@ function wireDual(a,b){$(a).addEventListener('input',()=>{$(b).value=$(a).value;
 function toast(t){$('toast').textContent=t; $('toast').classList.add('show'); setTimeout(()=>$('toast').classList.remove('show'),1600)}
 function csv(rows){return rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\n')}
 function runAudit(){let issues=[]; PLANTS.forEach(p=>{if(p.lightR.min<100||p.lightR.max>20000)issues.push(`${p.nameRu}: проверьте свет “${p.light}”`); if(!p.nameRu||!p.nameLat)issues.push(`${p.id}: нет названия`); if(!p.categoryList.length)issues.push(`${p.nameRu}: нет категории`);}); $('auditSummary').textContent=`Проверено ${PLANTS.length} записей. Найдено потенциальных замечаний: ${issues.length}.`; $('auditList').innerHTML=(issues.slice(0,8).map(x=>`<li>${esc(x)}</li>`).join('')||'<li>Критичных замечаний не найдено.</li>')+(issues.length>8?`<li>Ещё ${issues.length-8} замечаний скрыто, чтобы не перегружать экран.</li>`:'');}
-function init(){META.categories.forEach(x=>$('category').insertAdjacentHTML('beforeend',`<option>${esc(x)}</option>`)); META.soils.forEach(x=>$('soil').insertAdjacentHTML('beforeend',`<option>${esc(x)}</option>`)); $('totalCount').textContent=PLANTS.length; $('safeCount').textContent=PLANTS.filter(p=>p.petSafe).length; saveFavs(favs()); wireDual('light','lightRange'); wireDual('humidity','humidityRange'); wireDual('temp','tempRange'); updateParamOutputs(); wireFilterTabs(); ['q','pets','care','category','soil','sort','onlyFav'].forEach(id=>$(id).addEventListener('input',render)); $('profile').addEventListener('input',e=>e.target.value==='custom'?render():applyProfile(e.target.value)); document.querySelectorAll('[data-profile]').forEach(b=>b.addEventListener('click',()=>applyProfile(b.dataset.profile))); $('filterForm').addEventListener('submit',e=>{e.preventDefault();render();$('results').focus()}); $('reset').addEventListener('click',reset); document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{currentView=b.dataset.view;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===b));render()})); $('cards').addEventListener('click',e=>{const fav=e.target.closest('[data-fav]'); if(fav){const s=favs(),id=+fav.dataset.fav; s.has(id)?s.delete(id):s.add(id); saveFavs(s); render(); toast(s.has(id)?'Добавлено в избранное':'Убрано из избранного');}}); $('cards').addEventListener('change',e=>{if(e.target.matches('[data-compare]')){const id=+e.target.dataset.compare; if(e.target.checked&&compareIds.size>=3){e.target.checked=false;toast('Можно сравнить до 3 растений');return} e.target.checked?compareIds.add(id):compareIds.delete(id); renderCompare();}}); $('copyList').addEventListener('click',async()=>{const text=lastResults.slice(0,25).map((p,i)=>`${i+1}. ${p.nameRu} (${p.nameLat}) — ${p.score} баллов; свет ${p.light} лк; влажность ${p.humidity}%; полив: ${p.watering}`).join('\n'); try{await navigator.clipboard.writeText(text);toast('Текст скопирован')}catch{alert(text)}}); $('exportCsv').addEventListener('click',()=>{const rows=[['Название','Латынь','Баллы','Свет','Влажность','Температура','Полив','Грунт','Питомцы'],...lastResults.map(p=>[p.nameRu,p.nameLat,p.score,p.light,p.humidity,p.temp,p.watering,p.soil,p.petSafe?'безопаснее':'опасно'])]; const blob=new Blob([csv(rows)],{type:'text/csv;charset=utf-8'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='plantfit-recommendations.csv'; a.click(); URL.revokeObjectURL(a.href);}); runAudit(); const _qp=new URLSearchParams(location.search).get('profile')||localStorage.getItem('plantfit.quickProfile'); if(_qp&&PROFILES[_qp])applyProfile(_qp); render();}
+function init(){META.categories.forEach(x=>$('category').insertAdjacentHTML('beforeend',`<option>${esc(x)}</option>`)); META.soils.forEach(x=>$('soil').insertAdjacentHTML('beforeend',`<option>${esc(x)}</option>`)); $('totalCount').textContent=PLANTS.length; $('safeCount').textContent=PLANTS.filter(p=>p.petSafe).length; saveFavs(favs()); wireDual('light','lightRange'); wireDual('humidity','humidityRange'); wireDual('temp','tempRange'); updateParamOutputs(); wireFilterTabs(); ['q','pets','care','category','soil','sort','onlyFav'].forEach(id=>$(id).addEventListener('input',render)); document.querySelectorAll('[data-profile]').forEach(b=>b.addEventListener('click',()=>applyProfile(b.dataset.profile))); $('filterForm').addEventListener('submit',e=>{e.preventDefault();render();$('results').focus()}); $('reset').addEventListener('click',reset); document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{currentView=b.dataset.view;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===b));render()})); $('cards').addEventListener('click',e=>{const fav=e.target.closest('[data-fav]'); if(fav){const s=favs(),id=+fav.dataset.fav; s.has(id)?s.delete(id):s.add(id); saveFavs(s); render(); toast(s.has(id)?'Добавлено в избранное':'Убрано из избранного');}}); $('cards').addEventListener('change',e=>{if(e.target.matches('[data-compare]')){const id=+e.target.dataset.compare; if(e.target.checked&&compareIds.size>=3){e.target.checked=false;toast('Можно сравнить до 3 растений');return} e.target.checked?compareIds.add(id):compareIds.delete(id); renderCompare();}}); $('copyList').addEventListener('click',async()=>{const text=lastResults.slice(0,25).map((p,i)=>`${i+1}. ${p.nameRu} (${p.nameLat}) — ${p.score} баллов; свет ${p.light} лк; влажность ${p.humidity}%; полив: ${p.watering}`).join('\n'); try{await navigator.clipboard.writeText(text);toast('Текст скопирован')}catch{alert(text)}}); $('exportCsv').addEventListener('click',()=>{const rows=[['Название','Латынь','Баллы','Свет','Влажность','Температура','Полив','Грунт','Питомцы'],...lastResults.map(p=>[p.nameRu,p.nameLat,p.score,p.light,p.humidity,p.temp,p.watering,p.soil,p.petSafe?'безопаснее':'опасно'])]; const blob=new Blob([csv(rows)],{type:'text/csv;charset=utf-8'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='plantfit-recommendations.csv'; a.click(); URL.revokeObjectURL(a.href);}); runAudit(); const _qp=new URLSearchParams(location.search).get('profile')||localStorage.getItem('plantfit.quickProfile'); if(_qp&&PROFILES[_qp])applyProfile(_qp); render();}
 init();
 </script>
 </body>
