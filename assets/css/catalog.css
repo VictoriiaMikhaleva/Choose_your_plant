@@ -670,10 +670,22 @@
   border: 1px dashed rgba(47, 125, 79, 0.15);
 }
 
-.catalog-page .filters-row2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
+.catalog-page .filters-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.catalog-page .filters-stack .filters-field {
+  margin-bottom: 0;
+}
+
+.catalog-page .filters-stack .filters-select {
+  width: 100%;
+}
+
+.catalog-page #filtersPaneCare .filters-field--care {
+  margin-bottom: 0.15rem;
 }
 
 .catalog-page .filters-actions {
@@ -943,10 +955,6 @@
   .catalog-page .filters-panel {
     position: static;
     max-height: none;
-  }
-
-  .catalog-page .filters-row2 {
-    grid-template-columns: 1fr;
   }
 
   .catalog-page .param-card__label {
