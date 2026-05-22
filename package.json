@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npx serve .",
     "dev": "npx serve .",
-    "photos:normalize": "node scripts/normalize-plant-photos.js"
+    "photos:normalize": "node scripts/normalize-plant-photos.js",
+    "plants:add-extra": "node scripts/add-extra-plants.js"
   },
   "devDependencies": {
     "sharp": "^0.34.5"
