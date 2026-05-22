@@ -88,7 +88,7 @@ const EXTRA = [
   {
     file: "Сенполия.JPG",
     id: 105,
-    nameRu: "Сенполия",
+    nameRu: "Сенполия (фиалка)",
     nameLat: "Saintpaulia ionantha",
     family: "Геснериевые",
     category: "Цветущие",
