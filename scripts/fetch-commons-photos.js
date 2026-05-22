@@ -19,7 +19,8 @@ const SKIP_IDS = new Set([101, 102, 103, 104, 105]);
 const DELAY_MS = 900;
 const DOWNLOAD_RETRIES = 4;
 
-const BAD_TITLE = /icon|logo|map|chart|diagram|illustration|stamp|coin|herbarium|seed|flower\s+only|cross.?section|anatomy|svg/i;
+const BAD_TITLE =
+  /icon|logo|map|chart|diagram|illustration|stamp|coin|herbarium|seed|flower\s+only|cross.?section|anatomy|svg|\btrunk\b|\bbark\b|\bstem\b|\bствол\b/i;
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
