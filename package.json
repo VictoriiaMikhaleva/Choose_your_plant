@@ -5,6 +5,10 @@
   "description": "PlantFit Pro landing + plant selector catalog",
   "scripts": {
     "start": "npx serve .",
-    "dev": "npx serve ."
+    "dev": "npx serve .",
+    "photos:normalize": "node scripts/normalize-plant-photos.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }
