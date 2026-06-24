@@ -19,7 +19,8 @@ const DEFAULT_SOURCE = path.join(
   "Desktop",
   "Промптинг",
   "Вайб кодинг",
-  "Картинки единый стиль"
+  "Картинки единый стиль",
+  "1-50"
 );
 
 function loadPlants(html) {
@@ -43,7 +44,8 @@ function fileToId(filename) {
   const base = filename.toLowerCase();
   if (base.includes("anthurium_andraeanum")) return 5;
   const m =
-    base.match(/_(\d{1,3})(?:\.webp)+$/i) || base.match(/_(\d{1,3})\.webp/i);
+    base.match(/_(\d{1,3})(?:\.(?:webp|png|jpe?g))+$/i) ||
+    base.match(/_(\d{1,3})\.(webp|png|jpe?g)/i);
   return m ? Number(m[1]) : null;
 }
 
@@ -70,8 +72,12 @@ async function main() {
   const html = fs.readFileSync(CATALOG, "utf8");
   const { plants, marker } = loadPlants(html);
 
-  let targets = plants.filter((p) => p.id >= 1 && p.id <= 40);
-  if (opts.ids) targets = targets.filter((p) => opts.ids.has(p.id));
+  let targets;
+  if (opts.ids) {
+    targets = plants.filter((p) => opts.ids.has(p.id));
+  } else {
+    targets = plants.filter((p) => sourceMap.has(p.id));
+  }
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
   let done = 0;
