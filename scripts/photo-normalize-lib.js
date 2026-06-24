@@ -4,7 +4,7 @@
 const sharp = require("sharp");
 
 const CANVAS_W = 800;
-const CANVAS_H = 1067; /* 3:4 — больше места по высоте, макушки не упираются в край */
+const CANVAS_H = 600; /* 4:3 — как в UI каталога (.plantPhoto aspect-ratio: 4/3) */
 const SAFE_SCALE = 0.88;
 const WEBP_QUALITY = 82;
 const BLACK_THRESH = 34;

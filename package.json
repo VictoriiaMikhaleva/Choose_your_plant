@@ -9,7 +9,8 @@
     "photos:normalize": "node scripts/normalize-plant-photos.js",
     "photos:renormalize": "node scripts/renormalize-all-photos.js",
     "photos:commons": "node scripts/fetch-commons-photos.js",
-    "plants:add-extra": "node scripts/add-extra-plants.js"
+    "plants:add-extra": "node scripts/add-extra-plants.js",
+    "optimize:images": "node scripts/optimize-images.js"
   },
   "devDependencies": {
     "sharp": "^0.34.5"
