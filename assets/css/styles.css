@@ -757,6 +757,11 @@ h2 {
   border-top: 1px solid var(--line);
   padding: 1.2rem 0;
   color: var(--muted);
+  text-align: center;
+}
+
+.site-footer [data-footer-credit-host] {
+  text-align: center;
 }
 
 @media (min-width: 520px) {

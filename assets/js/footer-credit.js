@@ -13,6 +13,9 @@
         margin-top: 0.65rem;
         padding-top: 0.65rem;
         border-top: 1px solid rgba(23, 32, 24, 0.12);
+        text-align: center;
+        font-size: 0.75rem;
+        line-height: 1.45;
       }
       .footer-credit__line {
         margin: 0;
