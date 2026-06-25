@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Подбор растений для профи — сервис подбора растений под реальные условия вашего пространства.">
-  <title>Подбор растений для профи | Умный подбор растений</title>
+  <meta name="description" content="Подбор растений под условия помещения — для дизайнеров, озеленителей, флористов и владельцев пространств. Свет, влажность, уход и питомцы.">
+  <title>Подбор растений под условия помещения</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
         <a href="https://victoriiamikhaleva.github.io/Fitodesigner/">Тренажёр</a>
       </nav>
       <div class="site-header__actions">
-        <a class="btn btn-small" href="#quickStart">Подобрать</a>
+        <a class="btn btn-small" href="#quickStart">Подобрать растение</a>
         <a class="btn btn-small btn-ghost" href="plant_selector_catalog_v6_photos_lux_fixed.html">Каталог</a>
       </div>
     </div>
@@ -37,15 +37,31 @@
     <section class="hero hero--scenario" id="home" aria-labelledby="hero-title">
       <div class="container hero__inner">
         <header class="hero__intro">
-          <p class="hero__eyebrow">
-            <span class="hero__eyebrow-icon" aria-hidden="true">🌿</span>
-            На базе каталога Елены Носовой
-          </p>
-          <h1 id="hero-title">Подберите растение, которое выживет в ваших условиях</h1>
+          <p class="hero__audience">Для дизайнеров, озеленителей, флористов и владельцев пространств</p>
+          <h1 id="hero-title">Подберите растение под условия помещения</h1>
           <p class="hero__lead">
-            Без сложных таблиц и случайного выбора — сервис учитывает свет, влажность, уход и питомцев.
+            Сервис учитывает свет, влажность, уход, питомцев и задачи пространства.
           </p>
+          <div class="hero__actions">
+            <a class="btn btn-hero" href="#quickStart">Подобрать растение</a>
+            <a class="btn btn-hero btn-ghost" href="plant_selector_catalog_v6_photos_lux_fixed.html">Открыть каталог</a>
+          </div>
         </header>
+
+        <ul class="hero-trust" aria-label="О сервисе">
+          <li class="hero-trust__item">
+            <span class="hero-trust__icon" aria-hidden="true">🌿</span>
+            <span>На базе каталога Елены Носовой</span>
+          </li>
+          <li class="hero-trust__item">
+            <span class="hero-trust__icon" aria-hidden="true">🏠</span>
+            <span>Учитывает реальные условия помещения</span>
+          </li>
+          <li class="hero-trust__item">
+            <span class="hero-trust__icon" aria-hidden="true">✓</span>
+            <span>Подходит для дома, офиса и коммерческих пространств</span>
+          </li>
+        </ul>
 
         <div class="onboarding" id="quickStart">
           <header class="onboarding__header">
@@ -124,13 +140,6 @@
 
           <p class="onboarding__status" id="scenarioStatus" role="status" aria-live="polite"></p>
         </div>
-
-        <footer class="hero__secondary">
-          <a class="btn btn-ghost btn-secondary-catalog" href="plant_selector_catalog_v6_photos_lux_fixed.html">
-            Открыть каталог
-          </a>
-          <span class="hero__secondary-note">для ручной настройки параметров</span>
-        </footer>
 
         <!-- Fallback: без JS и для assistive tech -->
         <form id="quickStartForm" class="visually-hidden" hidden>

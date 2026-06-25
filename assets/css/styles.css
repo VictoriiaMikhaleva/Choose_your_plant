@@ -146,9 +146,19 @@ body {
 
 .hero__intro {
   width: 100%;
-  max-width: 36rem;
+  max-width: 40rem;
   margin: 0 auto;
   text-align: center;
+}
+
+.hero__audience {
+  margin: 0 0 0.75rem;
+  font-size: clamp(0.75rem, 1.2vw, 0.8125rem);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .hero__eyebrow {
@@ -172,21 +182,69 @@ body {
 }
 
 .hero--scenario h1 {
-  margin: 0 auto 0.65rem;
-  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  margin: 0 auto 0.75rem;
+  font-size: clamp(1.625rem, 3vw, 2.125rem);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.22;
   letter-spacing: -0.025em;
   overflow-wrap: break-word;
   text-wrap: balance;
 }
 
 .hero__lead {
-  margin: 0 auto;
-  max-width: 30rem;
+  margin: 0 auto 1.25rem;
+  max-width: 32rem;
   color: var(--muted);
   font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
-  line-height: 1.5;
+  line-height: 1.55;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 0 auto;
+}
+
+.btn-hero {
+  min-height: 2.75rem;
+  padding: 0.8rem 1.35rem;
+  font-size: 0.9375rem;
+}
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.65rem;
+  width: 100%;
+  max-width: 42rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-trust__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--brand-dark);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid #dbe7d8;
+  border-radius: 999px;
+}
+
+.hero-trust__icon {
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+  line-height: 1;
 }
 
 /* ——— Onboarding: premium scenario cards ——— */
@@ -901,8 +959,23 @@ h2 {
   }
 
   .site-header__actions .btn-small {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8125rem;
+    padding: 0.5rem 0.65rem;
+    font-size: 0.75rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .hero__actions .btn-hero {
+    width: 100%;
+  }
+
+  .hero-trust__item {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.65rem;
   }
 }
 
