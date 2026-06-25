@@ -610,9 +610,11 @@ select {
 
 .how-it-works__steps {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.45rem, 1.2vw, 0.75rem);
+  width: min(100%, 44rem);
+  max-width: 72%;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
 }
@@ -620,16 +622,32 @@ select {
 .how-step-card {
   margin: 0;
   padding: 0;
+  transition: transform 0.4s var(--ease);
+  will-change: transform;
+}
+
+.how-step-card:hover {
+  transform: translateY(-5px);
 }
 
 .how-step-card__img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 20px;
+  border-radius: clamp(12px, 1.6vw, 16px);
   box-shadow:
-    0 2px 8px rgba(23, 32, 24, 0.05),
-    0 12px 32px rgba(23, 32, 24, 0.06);
+    0 2px 6px rgba(23, 32, 24, 0.04),
+    0 8px 20px rgba(23, 32, 24, 0.05);
+  transition:
+    transform 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
+}
+
+.how-step-card:hover .how-step-card__img {
+  transform: scale(1.025);
+  box-shadow:
+    0 6px 14px rgba(23, 32, 24, 0.06),
+    0 16px 36px rgba(47, 125, 79, 0.1);
 }
 
 .how-trust-pill__visual {
@@ -731,20 +749,8 @@ h2 {
 }
 
 @media (min-width: 640px) {
-  .how-it-works__steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
   .how-it-works__actions {
     gap: 0.75rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .how-it-works__steps {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.1rem;
   }
 }
 
@@ -760,6 +766,12 @@ h2 {
 }
 
 @media (max-width: 768px) {
+  .how-it-works__steps {
+    max-width: 100%;
+    width: 100%;
+    gap: 0.4rem;
+  }
+
   .site-nav {
     display: none;
   }
@@ -806,7 +818,9 @@ h2 {
 
 @media (prefers-reduced-motion: reduce) {
   .onboarding-card,
-  .onboarding-card__visual {
+  .onboarding-card__visual,
+  .how-step-card,
+  .how-step-card__img {
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
   }
 
@@ -814,7 +828,9 @@ h2 {
     transform: none;
   }
 
-  .onboarding-card:hover .onboarding-card__visual {
+  .onboarding-card:hover .onboarding-card__visual,
+  .how-step-card:hover,
+  .how-step-card:hover .how-step-card__img {
     transform: none;
   }
 }
