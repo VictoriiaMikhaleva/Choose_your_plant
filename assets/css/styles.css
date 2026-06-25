@@ -664,21 +664,23 @@ select {
 }
 
 .how-step-card__visual {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 0 0 auto;
   width: 100%;
   margin: 0 0 clamp(0.65rem, 1.2vw, 0.85rem);
   padding: 0;
   background: transparent;
-  border-radius: 0;
   overflow: visible;
 }
 
 .how-step-card__img {
   display: block;
-  width: 100%;
+  width: clamp(5.25rem, 70%, 6.75rem);
   height: auto;
-  border-radius: 12px;
+  aspect-ratio: 1;
+  border-radius: 50%;
   object-fit: contain;
   object-position: center;
   pointer-events: none;
