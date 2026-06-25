@@ -425,16 +425,34 @@ body {
   user-select: none;
 }
 
+.onboarding-card__copy {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  width: 100%;
+  padding: 0 0.1rem;
+}
+
 .onboarding-card__headline {
   display: block;
-  flex: 0 0 auto;
   width: 100%;
   margin: 0;
-  padding: 0 0.1rem;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 1.25;
+  color: var(--text);
+}
+
+.onboarding-card__subtitle {
+  display: block;
+  width: 100%;
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.35;
   color: var(--muted);
 }
 
