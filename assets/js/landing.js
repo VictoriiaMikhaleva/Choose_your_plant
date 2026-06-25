@@ -67,3 +67,43 @@ if (quickStartForm) {
     openCatalogWithProfile(formData.get("profile"));
   });
 }
+
+function initMagnetStepCards() {
+  const canAnimate =
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if (!canAnimate) {
+    return;
+  }
+
+  const strength = 0.16;
+  const lift = -7;
+
+  document.querySelectorAll(".how-step-card").forEach((card) => {
+    const img = card.querySelector(".how-step-card__img");
+    if (!img) {
+      return;
+    }
+
+    card.addEventListener("mousemove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const offsetX = event.clientX - rect.left - rect.width / 2;
+      const offsetY = event.clientY - rect.top - rect.height / 2;
+      const moveX = offsetX * strength;
+      const moveY = offsetY * strength + lift;
+
+      img.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) scale(1.035)`;
+      card.classList.add("is-magnet");
+    });
+
+    const resetCard = () => {
+      img.style.transform = "";
+      card.classList.remove("is-magnet");
+    };
+
+    card.addEventListener("mouseleave", resetCard);
+  });
+}
+
+initMagnetStepCards();

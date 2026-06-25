@@ -611,43 +611,46 @@ select {
 .how-it-works__steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(0.45rem, 1.2vw, 0.75rem);
-  width: min(100%, 44rem);
-  max-width: 72%;
+  gap: clamp(0.55rem, 1.5vw, 0.95rem);
+  width: min(100%, 59rem);
+  max-width: 96%;
   margin: 0 auto;
   padding: 0;
   list-style: none;
 }
 
 .how-step-card {
+  position: relative;
   margin: 0;
   padding: 0;
-  transition: transform 0.4s var(--ease);
-  will-change: transform;
-}
-
-.how-step-card:hover {
-  transform: translateY(-5px);
 }
 
 .how-step-card__img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: clamp(12px, 1.6vw, 16px);
+  border-radius: clamp(14px, 1.8vw, 18px);
   box-shadow:
-    0 2px 6px rgba(23, 32, 24, 0.04),
-    0 8px 20px rgba(23, 32, 24, 0.05);
+    0 2px 8px rgba(23, 32, 24, 0.05),
+    0 10px 28px rgba(23, 32, 24, 0.06);
   transition:
-    transform 0.4s var(--ease),
-    box-shadow 0.4s var(--ease);
+    transform 0.45s var(--ease),
+    box-shadow 0.45s var(--ease);
+  will-change: transform;
 }
 
-.how-step-card:hover .how-step-card__img {
-  transform: scale(1.025);
+.how-step-card.is-magnet .how-step-card__img {
   box-shadow:
-    0 6px 14px rgba(23, 32, 24, 0.06),
-    0 16px 36px rgba(47, 125, 79, 0.1);
+    0 8px 18px rgba(23, 32, 24, 0.07),
+    0 20px 44px rgba(47, 125, 79, 0.12);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .how-step-card:hover .how-step-card__img {
+    box-shadow:
+      0 8px 18px rgba(23, 32, 24, 0.07),
+      0 20px 44px rgba(47, 125, 79, 0.12);
+  }
 }
 
 .how-trust-pill__visual {
@@ -769,7 +772,7 @@ h2 {
   .how-it-works__steps {
     max-width: 100%;
     width: 100%;
-    gap: 0.4rem;
+    gap: 0.5rem;
   }
 
   .site-nav {
@@ -818,9 +821,7 @@ h2 {
 
 @media (prefers-reduced-motion: reduce) {
   .onboarding-card,
-  .onboarding-card__visual,
-  .how-step-card,
-  .how-step-card__img {
+  .onboarding-card__visual {
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
   }
 
@@ -828,9 +829,20 @@ h2 {
     transform: none;
   }
 
-  .onboarding-card:hover .onboarding-card__visual,
-  .how-step-card:hover,
+  .onboarding-card:hover .onboarding-card__visual {
+    transform: none;
+  }
+
+  .how-step-card__img {
+    transition: box-shadow 0.15s ease;
+    will-change: auto;
+  }
+
+  .how-step-card.is-magnet .how-step-card__img,
   .how-step-card:hover .how-step-card__img {
     transform: none;
+    box-shadow:
+      0 2px 8px rgba(23, 32, 24, 0.05),
+      0 10px 28px rgba(23, 32, 24, 0.06);
   }
 }
