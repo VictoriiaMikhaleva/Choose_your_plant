@@ -20,7 +20,7 @@ const DEFAULT_SOURCE = path.join(
   "Промптинг",
   "Вайб кодинг",
   "Картинки единый стиль",
-  "1-50"
+  "1-100"
 );
 
 function loadPlants(html) {
@@ -43,6 +43,7 @@ function parseArgs() {
 function fileToId(filename) {
   const base = filename.toLowerCase();
   if (base.includes("anthurium_andraeanum")) return 5;
+  if (base.includes("робуста") || base.includes("robusta")) return 68;
   const m =
     base.match(/_(\d{1,3})(?:\.(?:webp|png|jpe?g))+$/i) ||
     base.match(/_(\d{1,3})\.(webp|png|jpe?g)/i);
@@ -97,7 +98,16 @@ async function main() {
     }
     const buf = fs.readFileSync(src);
     const outPath = path.join(OUT_DIR, `${plant.id}.webp`);
-    await (await normalizeToWhiteCanvas(buf)).toFile(outPath);
+    const srcMeta = await require("sharp")(buf).metadata();
+    const alreadyStyled =
+      /\.webp$/i.test(src) &&
+      srcMeta.width >= 768 &&
+      srcMeta.height >= 768;
+    if (alreadyStyled) {
+      await require("sharp")(buf).webp({ quality: 82, effort: 4 }).toFile(outPath);
+    } else {
+      await (await normalizeToWhiteCanvas(buf)).toFile(outPath);
+    }
     plant.photo = `assets/plants/${plant.id}.webp`;
     console.log(`✓ ${plant.id} ${plant.nameRu}`);
     done++;
