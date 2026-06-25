@@ -56,14 +56,15 @@
     const scores = topPlants.map((p) => p.score);
     const max = Math.max(...scores);
     const min = Math.min(...scores);
-    const range = min === max ? `${max} баллов` : `${min}–${max} баллов`;
+    const range =
+      min === max ? `${max} из 100` : `${min}–${max} из 100`;
     const noun =
       total % 10 === 1 && total % 100 !== 11
         ? "растение"
         : total % 10 >= 2 && total % 10 <= 4 && (total % 100 < 10 || total % 100 >= 20)
           ? "растения"
           : "растений";
-    return `По заданным условиям найдено ${total} подходящ${noun === "растение" ? "ее" : "их"} ${noun}. Лучшие варианты в подборке имеют совместимость ${range}.`;
+    return `По заданным условиям найдено ${total} подходящ${noun === "растение" ? "ее" : "их"} ${noun}. Лучшие варианты в подборке: соответствие условиям ${range}.`;
   }
 
   function buildWhyText(plant) {
@@ -138,7 +139,10 @@
             <h3>${esc(plant.nameRu)}</h3>
             <p>${esc(plant.nameLat)}</p>
           </div>
-          <div class="pdf-score-badge">${plant.score}/100</div>
+          <div class="pdf-score-badge" title="Оценка соответствия условиям помещения">
+            <span class="pdf-score-badge__label">Соответствие условиям</span>
+            <span class="pdf-score-badge__value">${plant.score} из 100</span>
+          </div>
         </div>
         <div class="pdf-plant-metrics">
           <div class="pdf-metric"><strong>☀ Свет</strong> ${esc(plant.light)} лк</div>

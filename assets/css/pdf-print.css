@@ -229,12 +229,31 @@
 
 .pdf-score-badge {
   flex-shrink: 0;
-  padding: 2.5mm 4mm;
-  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8mm;
+  padding: 3mm 4.5mm;
+  border-radius: 4mm;
   background: var(--pdf-brand);
   color: #fff;
-  font-size: 11pt;
+  text-align: right;
+  max-width: 42mm;
+}
+
+.pdf-score-badge__label {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  opacity: 0.92;
+}
+
+.pdf-score-badge__value {
+  font-size: 12pt;
   font-weight: 800;
+  line-height: 1.1;
   white-space: nowrap;
 }
 
