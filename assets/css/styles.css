@@ -629,10 +629,10 @@ select {
 .how-it-works__steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(0.55rem, 1.5vw, 0.95rem);
-  width: min(100%, 59rem);
-  max-width: 96%;
-  margin: 0 auto;
+  gap: clamp(0.85rem, 1.8vw, 1.35rem);
+  width: 100%;
+  max-width: none;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -787,12 +787,6 @@ h2 {
 }
 
 @media (max-width: 768px) {
-  .how-it-works__steps {
-    max-width: 100%;
-    width: 100%;
-    gap: 0.5rem;
-  }
-
   .site-nav {
     display: none;
   }
@@ -832,6 +826,24 @@ h2 {
 }
 
 @media (max-width: 900px) {
+  .how-it-works__steps {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    gap: 0.85rem;
+    width: 100%;
+    padding: 0.25rem 0 0.75rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .how-step-card {
+    flex: 0 0 clamp(14.5rem, 78vw, 17.5rem);
+    scroll-snap-align: start;
+  }
+
   .cards {
     grid-template-columns: 1fr;
   }
