@@ -67,19 +67,3 @@ if (quickStartForm) {
     openCatalogWithProfile(formData.get("profile"));
   });
 }
-
-const pitch = document.getElementById("pitch");
-if (pitch && "IntersectionObserver" in window) {
-  const pitchObserver = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        pitch.classList.add("is-visible");
-        pitchObserver.disconnect();
-      }
-    },
-    { threshold: 0.4 }
-  );
-  pitchObserver.observe(pitch);
-} else if (pitch) {
-  pitch.classList.add("is-visible");
-}
