@@ -642,13 +642,18 @@ select {
   position: relative;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
-.how-step-card__img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: clamp(14px, 1.8vw, 18px);
+.how-step-card__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(0.85rem, 1.4vw, 1.1rem) clamp(0.75rem, 1.2vw, 0.95rem) clamp(0.95rem, 1.5vw, 1.15rem);
+  text-align: center;
+  background: #fff;
+  border: 1px solid rgba(23, 32, 24, 0.06);
+  border-radius: clamp(16px, 2vw, 20px);
   box-shadow:
     0 2px 8px rgba(23, 32, 24, 0.05),
     0 10px 28px rgba(23, 32, 24, 0.06);
@@ -658,17 +663,63 @@ select {
   will-change: transform;
 }
 
-.how-step-card.is-magnet .how-step-card__img {
+.how-step-card__visual {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  aspect-ratio: 1;
+  width: 100%;
+  margin: 0 0 clamp(0.65rem, 1.2vw, 0.85rem);
+  padding: clamp(0.55rem, 1vw, 0.75rem);
+  background: #f9f7f2;
+  border-radius: 14px;
+}
+
+.how-step-card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.how-step-card__copy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0.35rem;
+  justify-content: flex-start;
+}
+
+.how-step-card__title {
+  margin: 0;
+  font-size: clamp(0.9rem, 1.15vw, 1.0625rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.how-step-card__text {
+  margin: 0;
+  font-size: clamp(0.75rem, 0.95vw, 0.8125rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6f7b74;
+}
+
+.how-step-card.is-magnet .how-step-card__inner {
   box-shadow:
     0 8px 18px rgba(23, 32, 24, 0.07),
     0 20px 44px rgba(47, 125, 79, 0.12);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .how-step-card:hover .how-step-card__img {
+  .how-step-card:hover .how-step-card__inner {
     box-shadow:
       0 8px 18px rgba(23, 32, 24, 0.07),
-      0 20px 44px rgba(47, 125, 79, 0.12);
+      0 20px 44px rgba(47, 125, 79, 0.1);
   }
 }
 
@@ -846,7 +897,7 @@ h2 {
   }
 
   .how-step-card {
-    flex: 0 0 clamp(14.5rem, 78vw, 17.5rem);
+    flex: 0 0 clamp(16rem, 78vw, 19rem);
     scroll-snap-align: start;
   }
 
@@ -869,13 +920,13 @@ h2 {
     transform: none;
   }
 
-  .how-step-card__img {
+  .how-step-card__inner {
     transition: box-shadow 0.15s ease;
     will-change: auto;
   }
 
-  .how-step-card.is-magnet .how-step-card__img,
-  .how-step-card:hover .how-step-card__img {
+  .how-step-card.is-magnet .how-step-card__inner,
+  .how-step-card:hover .how-step-card__inner {
     transform: none;
     box-shadow:
       0 2px 8px rgba(23, 32, 24, 0.05),

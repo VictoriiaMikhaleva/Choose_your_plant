@@ -81,8 +81,8 @@ function initMagnetStepCards() {
   const lift = -7;
 
   document.querySelectorAll(".how-step-card").forEach((card) => {
-    const img = card.querySelector(".how-step-card__img");
-    if (!img) {
+    const inner = card.querySelector(".how-step-card__inner");
+    if (!inner) {
       return;
     }
 
@@ -93,12 +93,12 @@ function initMagnetStepCards() {
       const moveX = offsetX * strength;
       const moveY = offsetY * strength + lift;
 
-      img.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) scale(1.035)`;
+      inner.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) scale(1.02)`;
       card.classList.add("is-magnet");
     });
 
     const resetCard = () => {
-      img.style.transform = "";
+      inner.style.transform = "";
       card.classList.remove("is-magnet");
     };
 
