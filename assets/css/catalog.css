@@ -97,6 +97,10 @@
   gap: 0.5rem;
 }
 
+.catalog-page .site-header__trainer {
+  display: none;
+}
+
 .catalog-page .btn {
   display: inline-flex;
   align-items: center;
@@ -965,6 +969,38 @@
 @media (max-width: 900px) {
   .catalog-page .site-nav {
     display: none;
+  }
+
+  .catalog-page .site-header__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .catalog-page .brand {
+    min-width: 0;
+  }
+
+  .catalog-page .brand__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8125rem;
+  }
+
+  .catalog-page .site-header__trainer {
+    display: inline-flex;
+  }
+
+  .catalog-page .site-header__actions {
+    gap: 0.35rem;
+  }
+
+  .catalog-page .site-header__actions .btn-small {
+    padding: 0.45rem 0.55rem;
+    font-size: 0.6875rem;
+    white-space: nowrap;
   }
 
   .catalog-hero__stats {
