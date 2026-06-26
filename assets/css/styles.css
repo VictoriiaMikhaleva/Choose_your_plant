@@ -861,12 +861,37 @@ h2 {
   }
 
   .site-header__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.5rem;
     min-height: 3.5rem;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand__name {
+    font-size: 0.8125rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Дублирует главную CTA в hero — в шапке оставляем только «Каталог» */
+  .site-header__actions .btn-small:not(.btn-ghost) {
+    display: none;
+  }
+
+  .site-header__actions {
+    flex-shrink: 0;
   }
 
   .site-header__actions .btn-small {
     padding: 0.5rem 0.65rem;
     font-size: 0.75rem;
+    white-space: nowrap;
   }
 
   .hero__actions {
