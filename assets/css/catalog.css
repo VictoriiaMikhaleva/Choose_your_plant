@@ -840,6 +840,28 @@
   border-color: var(--brand);
 }
 
+.catalog-page .results-expand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.25rem 0 1rem;
+  text-align: center;
+}
+
+.catalog-page .results-expand[hidden] {
+  display: none !important;
+}
+
+.catalog-page .results-expand__btn {
+  width: min(100%, 420px);
+}
+
+.catalog-page .results-expand__note {
+  margin: 0;
+  max-width: 36rem;
+}
+
 /* ——— Plant cards ——— */
 .catalog-page .grid {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
