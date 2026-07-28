@@ -879,6 +879,11 @@
   box-shadow: var(--shadow-lg);
 }
 
+.catalog-page article.card.plant.plant--highlight {
+  outline: 3px solid var(--brand);
+  box-shadow: 0 0 0 6px rgba(47, 125, 79, 0.16), var(--shadow-lg);
+}
+
 .catalog-page .plantPhoto {
   aspect-ratio: 3 / 4;
   border-radius: 18px;
