@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110702359', 'ym');
+
+    ym(110702359, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110702359" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2f7d4f">
+<title>Демо · Подбор растений</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<style>
+:root{--bg:#f3f7ef;--card:#fff;--ink:#172018;--muted:#617067;--brand:#2f7d4f;--brand2:#7fb069;--line:#d9e7d4;--soft:#f8fbf5;--danger:#b33a3a;--warn:#b7791f;--ok:#2f7d4f;--blue:#2d6cdf;--shadow:0 16px 40px rgba(24,50,30,.11);--r:24px;color-scheme:light}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 10% 0%,#e3f1d8 0,#f3f7ef 38%,#eef5ea 100%);color:var(--ink)}button,input,select,textarea{font:inherit}button{border:0;cursor:pointer}.skip-link{position:absolute;left:-9999px;top:12px;z-index:99;padding:12px 16px;border-radius:14px;background:var(--brand);color:#fff;font-weight:850}.skip-link:focus{left:12px}.wrap{max-width:1280px;margin:0 auto;padding:0 22px}.hero{padding:34px 0 18px}.heroGrid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.panel,.card{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}.heroMain{padding:30px}.heroAside{padding:24px}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#eaf5e7;color:#245136;border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:13px;font-weight:800}.hero h1{font-size:clamp(34px,5vw,62px);line-height:.98;letter-spacing:-.055em;margin:14px 0 14px}.lead{font-size:18px;color:var(--muted);max-width:830px;line-height:1.55}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}.stat{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:13px}.stat b{display:block;font-size:25px;color:var(--brand)}.stat span{display:block;margin-top:4px;color:var(--muted);font-size:12px;font-weight:700}.layout{display:grid;grid-template-columns:410px minmax(0,1fr);gap:20px;align-items:start;padding-bottom:46px}.filters{position:sticky;top:14px;padding:18px}.filters h2,.results h2{margin:0 0 14px;font-size:23px}.group{border:1px solid var(--line);border-radius:18px;padding:14px;margin:13px 0;background:rgba(248,251,245,.68)}legend{font-size:12px;font-weight:900;color:#314839;padding:0 7px;letter-spacing:.04em;text-transform:uppercase}label{display:block;font-size:13px;font-weight:850;color:#293c30;margin:12px 0 7px}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);padding:12px 13px;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(47,125,79,.13)}.row2{display:grid;grid-template-columns:1fr;gap:12px}.slider{display:grid;grid-template-columns:minmax(132px,.42fr) minmax(190px,1fr);gap:10px;align-items:center}.slider input[type=number]{min-width:132px;font-size:17px;font-weight:850;padding-left:14px;padding-right:14px}.slider input[type=range]{padding:0;accent-color:var(--brand);height:42px}.hint{font-size:12px;line-height:1.42;color:var(--muted);margin:7px 0 0}.btns{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.btn{border-radius:999px;padding:12px 16px;font-weight:900;background:var(--brand);color:#fff}.btn.secondary{background:#edf5e9;color:#245136;border:1px solid var(--line)}.btn.ghost{background:#fff;color:var(--brand);border:1px solid var(--line)}.btn.small{padding:8px 11px;font-size:13px}.summary{padding:16px 18px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.summary strong{color:var(--brand)}.tabs{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 12px;font-size:13px;font-weight:850;color:#314839}.chip.active{background:var(--brand);color:#fff;border-color:var(--brand)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(390px,1fr));gap:20px}.plant{padding:16px;display:flex;flex-direction:column;gap:14px;position:relative}.plantPhoto{width:100%;aspect-ratio:4/3;border-radius:22px;border:1px solid var(--line);background:linear-gradient(135deg,#eef7e9,#ffffff);display:grid;place-items:center;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.55)}.plantPhoto img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;padding:8px}.plantPhoto.fallback{font-size:54px}.plantTop{display:flex;gap:12px;align-items:flex-start;padding-right:42px}.avatar{width:72px;height:72px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,#dff1d7,#fbfef8);border:1px solid var(--line);font-size:28px;flex:0 0 auto;overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover;display:block}.avatar.fallback{width:54px;height:54px;border-radius:18px;overflow:visible}.plant h3{margin:0;font-size:19px;line-height:1.12}.lat{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:3px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:5px 8px;font-size:12px;font-weight:850;color:#314839}.tag.ok{background:#eaf8ee;color:var(--ok)}.tag.warn{background:#fff8e8;color:var(--warn)}.tag.danger{background:#fff0f0;color:var(--danger)}.tag.blue{background:#eef4ff;color:var(--blue)}.meters{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.meter{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:14px;font-size:13px;min-width:0;display:flex;flex-direction:column;gap:7px}.meter.lightMeter{grid-column:1/-1}.meter span{display:block;text-transform:uppercase;letter-spacing:.045em;color:var(--muted);font-size:10px;font-weight:900;margin:0}.meter b{display:flex;align-items:baseline;gap:5px;min-width:0;font-size:16px;line-height:1.15;color:var(--ink);font-weight:950;white-space:nowrap}.meter b .valueText{display:inline-block;max-width:100%;overflow:visible;text-overflow:clip}.meter.lightMeter b{font-size:22px}.meter.lightMeter .valueText{white-space:normal;overflow-wrap:anywhere}.meter.lightMeter .unit{font-size:13px}.meter b .unit{font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.01em;flex:0 0 auto}.scorebar{height:9px;border-radius:999px;background:#edf2ea;overflow:hidden}.scorebar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--brand2),var(--brand))}.reasons{margin:0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.42}.tips{border-top:1px dashed var(--line);padding-top:10px}.tips b{display:block;margin-bottom:6px}.fav{position:absolute;right:12px;top:12px;background:#fff;border:1px solid var(--line);width:38px;height:38px;border-radius:14px;color:#9a6b00;font-size:18px}.fav.active{background:#fff8df;border-color:#f0d88a}.compareRow{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.compareRow label{display:inline-flex;align-items:center;gap:7px;margin:0;font-size:12.5px;color:var(--muted)}.compareRow input{width:auto}.empty{display:none;text-align:center;padding:34px}.drawer{margin-top:14px;padding:16px}.compareGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.compareBox{border:1px solid var(--line);border-radius:16px;padding:12px;background:var(--soft);font-size:13px}.audit{margin-top:14px;padding:16px}.audit ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:13px}.careGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.careItem{border:1px solid var(--line);border-radius:16px;background:var(--soft);padding:13px;font-size:13px;color:var(--muted)}.careItem b{display:block;color:var(--ink);margin-bottom:5px}.mini{font-size:12px;color:var(--muted)}details summary{cursor:pointer;color:var(--brand);font-weight:900}footer{padding:0 0 36px;color:var(--muted);font-size:13px}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#172018;color:#fff;padding:12px 16px;border-radius:999px;box-shadow:var(--shadow);display:none;z-index:100}.toast.show{display:block}@media(max-width:1050px){.heroGrid,.layout{grid-template-columns:1fr}.filters{position:static}.grid{grid-template-columns:repeat(2,1fr)}.careGrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.wrap{padding:0 14px}.stats,.grid,.row2,.careGrid,.compareGrid{grid-template-columns:1fr}.slider{grid-template-columns:1fr}.heroMain{padding:22px}.heroAside{padding:18px}.filters{padding:14px}.summary{align-items:flex-start}.tabs{width:100%}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* === v4: просторные карточки + визуальные шкалы параметров === */
+.layout{grid-template-columns:380px minmax(0,1fr)}
+.grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;align-items:stretch}
+.plant{padding:18px;gap:13px}
+.plantTop{align-items:flex-start;padding-right:42px}
+.avatar{width:92px;height:92px;border-radius:24px}
+.plant h3{font-size:19px;padding-top:3px}
+.lat{font-size:13px;line-height:1.35}
+.meters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:11px}
+.meter{padding:12px;border-radius:16px;font-size:13px;min-height:96px;display:flex;flex-direction:column;gap:7px;justify-content:space-between}
+.meter span{font-size:10px;margin:0}
+.meter b{display:block;font-size:15px;line-height:1.25;color:var(--ink);font-weight:900;word-break:normal;overflow-wrap:anywhere}
+.meter small{display:block;color:var(--muted);font-size:11px;line-height:1.25}
+.paramTrack{position:relative;height:10px;border-radius:999px;background:#e7efe3;overflow:hidden;border:1px solid rgba(47,125,79,.12)}
+.paramTrack i{position:absolute;top:0;bottom:0;left:var(--a);width:var(--w);border-radius:999px;background:linear-gradient(90deg,#b9ddb0,#2f7d4f)}
+.paramTrack em{position:absolute;top:-4px;left:var(--v);width:4px;height:18px;border-radius:999px;background:#172018;box-shadow:0 0 0 2px rgba(255,255,255,.9);transform:translateX(-2px);font-style:normal}
+.metricNote{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--muted);line-height:1.25}
+.metricNote::before{content:'';width:7px;height:7px;border-radius:999px;background:var(--ok);flex:0 0 auto}.metricNote.warn::before{background:var(--warn)}
+@media(max-width:1050px){.layout{grid-template-columns:1fr}.grid{grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.avatar{width:84px;height:84px}.meters{grid-template-columns:1fr}.meter{min-height:auto}.plantTop{padding-right:38px}.meter b{font-size:17px}}
+</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/catalog.css">
+  <link rel="stylesheet" href="assets/css/pdf-print.css">
+
+<style>
+.demo-banner{background:linear-gradient(90deg,#245136,#2f7d4f 55%,#4a9a63);color:#fff;font-size:.875rem;line-height:1.4}
+.demo-banner__inner{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem 1rem;padding:.7rem 22px;max-width:1280px;margin:0 auto}
+.demo-banner strong{font-weight:800}
+.demo-banner span{opacity:.95}
+@media(max-width:640px){.demo-banner__inner{padding:.65rem 14px;flex-direction:column;gap:.2rem}}
+</style>
+</head>
+<body class="catalog-page catalog-page--demo">
+<a class="skip-link" href="#results">К результатам</a>
+
+<div class="demo-banner" role="status">
+  <div class="wrap demo-banner__inner">
+    <strong>Демо-версия для презентации</strong>
+    <span>Укороченный каталог — 10 растений с разными параметрами. Можно проверить фильтры и сценарии.</span>
+  </div>
+</div>
+<!--
+🌿 Интерактивный каталог растений •
+    На базе материалов Елены Носовой
+Что улучшено относительно MVP:
+1) нормализация данных каталога при запуске: диапазоны света/влажности/температуры превращаются в числа;
+2) объяснимый скоринг: каждая карточка показывает причины и советы;
+3) профили помещений и стили ухода;
+4) избранное в localStorage, сравнение до 3 растений, экспорт CSV/текста;
+5) встроенный аудит качества данных;
+6) всё работает локально, без серверов и внешних библиотек.
+Как обновлять каталог: замените массив RAW_PLANTS внизу файла. Остальная логика сама пересчитает META и аудит.
+-->
+<header class="site-header catalog-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="plant_catalog_demo.html">
+      <span class="brand__mark" aria-hidden="true">🌿</span>
+      <span class="brand__text">
+        <span class="brand__name">Подбор растений</span>
+        <span class="brand__tag">демо · условия в помещении</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Навигация">
+      <a href="https://victoriiamikhaleva.github.io/garden_plants/garden_catalog_demo.html">Каталог садовых растений</a>
+    </nav>
+    <div class="site-header__actions">
+      <span class="btn btn-small btn-ghost" aria-disabled="true">Демо</span>
+    </div>
+  </div>
+</header>
+<section class="catalog-hero wrap">
+  <div class="catalog-hero__intro">
+    <p class="catalog-hero__eyebrow">Демо · На базе каталога Елены Носовой</p>
+    <h1 class="catalog-hero__title">Каталог с оценкой совпадения</h1>
+    <p class="catalog-hero__lead">Укороченный каталог для презентации: свет, влажность, уход и питомцы — с баллами совпадения. Попробуйте сценарии и фильтры.</p>
+  </div>
+  <div class="catalog-hero__stats">
+    <div class="catalog-stat"><b id="totalCount">—</b><span>в каталоге</span></div>
+    <div class="catalog-stat"><b id="shownCount">—</b><span>по критериям</span></div>
+    <div class="catalog-stat"><b id="safeCount">—</b><span>безопасны для питомцев</span></div>
+    <div class="catalog-stat"><b id="favCount">0</b><span>в избранном</span></div>
+  </div>
+  <div class="catalog-hero__quick">
+    <p class="catalog-hero__quick-label">Быстрые профили</p>
+    <div class="catalog-quick-btns">
+      <button class="catalog-quick-btn" type="button" data-profile="darkOffice">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/scenarios/dark-icon.svg" alt="" width="32" height="32" decoding="async">
+        </span>
+        <span>Тёмный офис</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="sunnyWindow">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/scenarios/sun-icon.svg" alt="" width="32" height="32" decoding="async">
+        </span>
+        <span>Солнечное окно</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="bathroom">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/scenarios/bathroom-icon.svg" alt="" width="32" height="32" decoding="async">
+        </span>
+        <span>Ванная</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="pets">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/scenarios/pets-icon.svg" alt="" width="32" height="32" decoding="async">
+        </span>
+        <span>Питомцы</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="largePlant">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/scenarios/large-icon.svg" alt="" width="32" height="32" decoding="async">
+        </span>
+        <span>Крупное</span>
+      </button>
+    </div>
+  </div>
+</section>
+<main class="wrap layout">
+<aside class="panel filters filters-panel" id="filtersPanel">
+<form id="filterForm" class="filters-form">
+<header class="filters-form__head">
+<div class="filters-form__title-row">
+<span class="filters-form__badge" aria-hidden="true">◈</span>
+<h2 class="filters-form__title">Параметры</h2>
+</div>
+<p class="filters-form__subtitle">Свет, климат и уход — пересчёт в реальном времени</p>
+</header>
+<div class="filters-search">
+<label class="visually-hidden" for="q">Поиск</label>
+<span class="filters-search__icon" aria-hidden="true">⌕</span>
+<input id="q" type="search" class="filters-search__input" placeholder="Фикус, monstera, лианы…" autocomplete="off">
+</div>
+<nav class="filters-tabs" role="tablist" aria-label="Разделы параметров">
+<button type="button" class="filters-tab is-active" role="tab" aria-selected="true" aria-controls="filtersPaneRoom" id="filtersTabRoom" data-filters-tab="room">Помещение</button>
+<button type="button" class="filters-tab" role="tab" aria-selected="false" aria-controls="filtersPaneCare" id="filtersTabCare" data-filters-tab="care" tabindex="-1">Уход</button>
+</nav>
+<div class="filters-panes">
+<fieldset class="filters-pane is-active" id="filtersPaneRoom" role="tabpanel" aria-labelledby="filtersTabRoom">
+<legend class="visually-hidden">Помещение</legend>
+<input type="hidden" id="profile" value="custom">
+<div class="param-grid">
+<div class="param-card" data-param="light">
+<div class="param-card__head">
+<span class="param-card__icon" aria-hidden="true">☀</span>
+<div class="param-card__meta">
+<label class="param-card__label" for="light">Свет</label>
+<span class="param-card__unit">лк</span>
+</div>
+<output class="param-card__value" id="lightValue" for="light lightRange">2500</output>
+</div>
+<div class="param-card__controls">
+<div class="param-card__input-row">
+<input id="light" class="param-card__number" type="number" min="0" max="16000" step="100" value="2500" aria-label="Свет, люкс">
+</div>
+<div class="param-card__track">
+<input id="lightRange" class="param-card__range" type="range" min="0" max="16000" step="100" value="2500" aria-label="Свет, шкала">
+</div>
+</div>
+</div>
+<div class="param-card" data-param="humidity">
+<div class="param-card__head">
+<span class="param-card__icon" aria-hidden="true">💧</span>
+<div class="param-card__meta">
+<label class="param-card__label" for="humidity">Влажность</label>
+<span class="param-card__unit">%</span>
+</div>
+<output class="param-card__value" id="humidityValue" for="humidity humidityRange">50</output>
+</div>
+<div class="param-card__controls">
+<div class="param-card__input-row">
+<input id="humidity" class="param-card__number" type="number" min="10" max="100" value="50" aria-label="Влажность, проценты">
+</div>
+<div class="param-card__track">
+<input id="humidityRange" class="param-card__range" type="range" min="10" max="100" value="50" aria-label="Влажность, шкала">
+</div>
+</div>
+</div>
+<div class="param-card" data-param="temp">
+<div class="param-card__head">
+<span class="param-card__icon" aria-hidden="true">🌡</span>
+<div class="param-card__meta">
+<label class="param-card__label" for="temp">Температура</label>
+<span class="param-card__unit">°C</span>
+</div>
+<output class="param-card__value" id="tempValue" for="temp tempRange">22</output>
+</div>
+<div class="param-card__controls">
+<div class="param-card__input-row">
+<input id="temp" class="param-card__number" type="number" min="5" max="40" value="22" aria-label="Температура, градусы">
+</div>
+<div class="param-card__track">
+<input id="tempRange" class="param-card__range" type="range" min="5" max="40" value="22" aria-label="Температура, шкала">
+</div>
+</div>
+</div>
+</div>
+<div class="filters-field">
+<label class="filters-label" for="pets">Питомцы</label>
+<div class="filters-select-wrap">
+<select id="pets" class="filters-select">
+<option value="any">Не важно</option>
+<option value="safe">Нужны безопасные</option>
+<option value="no">Питомцев нет</option>
+</select>
+</div>
+</div>
+<p class="filters-hint">Люкс — через люксметр; для точности замерьте в разное время дня.</p>
+</fieldset>
+<fieldset class="filters-pane" id="filtersPaneCare" role="tabpanel" aria-labelledby="filtersTabCare" hidden>
+<legend class="visually-hidden">Уход и каталог</legend>
+<div class="filters-field">
+<label class="filters-label" for="care">Стиль ухода</label>
+<div class="filters-select-wrap">
+<select id="care" class="filters-select">
+<option value="any">Любой</option>
+<option value="forgetful">Забывчивый: минимум полива</option>
+<option value="easy">Неприхотливые для офиса</option>
+<option value="humid">Готов поддерживать влажность</option>
+<option value="flower">Хочу цветение</option>
+<option value="big">Крупномер / акцент</option>
+<option value="hang">Ампельные / лианы</option>
+<option value="collector">Редкие и выразительные</option>
+</select>
+</div>
+</div>
+<div class="filters-row2">
+<div class="filters-field">
+<label class="filters-label" for="category">Категория</label>
+<div class="filters-select-wrap">
+<select id="category" class="filters-select"><option value="any">Любая</option></select>
+</div>
+</div>
+<div class="filters-field">
+<label class="filters-label" for="soil">Грунт</label>
+<div class="filters-select-wrap">
+<select id="soil" class="filters-select"><option value="any">Любой</option></select>
+</div>
+</div>
+</div>
+<div class="filters-row2">
+<div class="filters-field">
+<label class="filters-label" for="onlyFav">Показать</label>
+<div class="filters-select-wrap">
+<select id="onlyFav" class="filters-select">
+<option value="all">Все растения</option>
+<option value="fav">Только избранное</option>
+</select>
+</div>
+</div>
+<div class="filters-field">
+<label class="filters-label" for="sort">Сортировка</label>
+<div class="filters-select-wrap">
+<select id="sort" class="filters-select">
+<option value="score">Лучшее совпадение</option>
+<option value="name">По названию</option>
+<option value="light">По свету</option>
+<option value="care">По простоте ухода</option>
+</select>
+</div>
+</div>
+</div>
+</fieldset>
+</div>
+<footer class="filters-actions">
+<div class="filters-actions__primary">
+<button class="btn filters-btn-submit" type="submit">Подобрать</button>
+<button class="btn secondary" type="button" id="reset">Сбросить</button>
+</div>
+<div class="filters-actions__export">
+<button class="btn ghost btn-small" type="button" id="exportCsv">CSV</button>
+<button class="btn ghost btn-small" type="button" id="copyList">Текст</button>
+</div>
+</footer>
+</form>
+</aside>
+<section id="results" class="results" tabindex="-1" aria-live="polite"><div class="panel summary"><div><strong id="resultTitle">Рекомендации</strong><br><span class="mini" id="resultSubtitle">Показаны идеальные совпадения — 90 баллов и выше.</span><div class="summary-actions"><button type="button" class="pdf-export-btn" id="pdfPrintBtn">Подготовить проект для клиента</button></div></div></div><div id="cards" class="grid"></div><div id="expandResults" class="results-expand" hidden><button type="button" class="btn secondary results-expand__btn" id="showLessSuitableBtn">Показать менее подходящие растения</button><p class="mini results-expand__note" id="expandResultsNote"></p></div><div id="empty" class="panel empty"><h2>Ничего не найдено</h2><p>Ослабьте фильтр по питомцам, категории или стилю ухода.</p></div><section class="panel drawer" id="comparePanel"><h2>Сравнение</h2><p class="mini">Отметьте до 3 растений в карточках, чтобы сравнить условия и уход.</p><div id="compareGrid" class="compareGrid"></div></section><section class="panel audit"><h2>Аудит данных каталога</h2><p class="mini" id="auditSummary"></p><ul id="auditList"></ul></section><section class="panel drawer"><h2>Памятка по уходу</h2><div class="careGrid"><div class="careItem"><b>Полив</b>Лучше ориентироваться на просушку грунта, а не на фиксированный день недели.</div><div class="careItem"><b>Свет</b>Вытягивание — чаще всего мало света; ожоги и выцветание — слишком много прямого солнца.</div><div class="careItem"><b>Влажность</b>Тропические виды стабильнее при 50–70%, суккуленты обычно комфортны при 30–50%.</div><div class="careItem"><b>Питомцы</b>Даже безопасные растения лучше не давать животным есть: возможна индивидуальная реакция.</div></div></section></section>
+</main><footer class="catalog-footer"><div class="wrap catalog-footer__inner">Встроенный каталог и расчёты работают локально. Рекомендации не заменяют наблюдение за конкретным растением после адаптации.</div></footer>
+
+<div id="pdf-template" class="pdf-template" aria-hidden="true">
+  <div class="pdf-doc">
+    <header class="pdf-cover-block">
+      <p class="pdf-cover-eyebrow">Проект озеленения</p>
+      <h1 class="pdf-cover-title">Подбор растений для помещения</h1>
+      <p class="pdf-cover-date"></p>
+    </header>
+    <section class="pdf-params-section">
+      <h2 class="pdf-section-title">Параметры помещения</h2>
+      <div class="pdf-params-grid"></div>
+    </section>
+    <section class="pdf-summary-section">
+      <div class="pdf-summary-box"><p></p></div>
+    </section>
+    <section class="pdf-plants-section">
+      <h2 class="pdf-section-title">Лучшие растения</h2>
+      <div class="pdf-plants-list"></div>
+    </section>
+    <section class="pdf-recs-section pdf-recs">
+      <h2 class="pdf-section-title">Рекомендации</h2>
+      <ul></ul>
+    </section>
+    <footer class="pdf-footer">
+      Подбор сформирован сервисом <strong>«Подбор растений»</strong><br>
+      victoriiamikhaleva.github.io
+    </footer>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="assets/js/pdf-export.js"></script>
+<script>
+const RAW_PLANTS = [{"photo":"assets/plants/1.webp","nameRu":"Аглаонема Мария","nameLat":"Aglaonema commutatum 'Maria'","family":"Ароидные","category":"Декоративно-лиственное","origin":"Тропики","temp":"18–26","light":"800–3000","humidity":"50–70","watering":"на 1/2 горшка","soil":"Универсальный","ph":"5.5–6.5","petDanger":"Да","comments":"Теневыносливое и неприхотливое растение с тёмно-зелёными листьями с серебристыми штрихами. Отличается высокой устойчивостью к слабому освещению, подойдет для офисов без окон.","id":1},{"photo":"assets/plants/8.webp","nameRu":"Арека (Хризолидокарпус)","nameLat":"Dypsis lutescens","family":"Пальмовые","category":"Пальмы, Крупномеры","origin":"Тропики (Мадагаскар)","temp":"18–26","light":"4000-10000","humidity":"50–70","watering":"на 1/3 горшка","soil":"Универсальный с добавлением большего количества влагоевких разрыхлителей","ph":"6.0–6.5","petDanger":"Нет","comments":"Самая капризная из всех интерьерных пальм.","id":8},{"photo":"assets/plants/10.webp","nameRu":"Аспидистра Элатиор","nameLat":"Aspidistra elatior","family":"Спаржевые","category":"Декоративно-лиственное","origin":"Субтропики","temp":"16–26","light":"900-3000","humidity":"40–60","watering":"Полностью","soil":"Для суккулентов","ph":"6.0–6.5","petDanger":"Нет","comments":"«Железное растение» — выдерживает недостаток света, нерегулярный полив и перепады температур. Идеально для сложных условий: офисы, рестораны, отели, но до сих пор редко используется в коммерческом озеленении из-за высокой цены. Не любит частых пересадок.","id":10},{"photo":"assets/plants/11.webp","nameRu":"Асплениум","nameLat":"Asplenium nidus","family":"Костенцовые","category":"Декоративно-лиственное","origin":"Тропики (ЮВА)","temp":"18–26","light":"800–1500","humidity":"60–80","watering":"на 1/3 горшка","soil":"Для папоротников","ph":"5.5–6.0","petDanger":"Нет","comments":"В природе вырастает до 1,5 метра в диаметре, в комнатном цветоводстве не стоит ждать подобных результатов. Хорошо смотрится как отдельно стоящее растение, подходит для фитостен.","id":11},{"photo":"assets/plants/14.webp","nameRu":"Гастерия пупырчатая","nameLat":"Gasteria verrucosa","family":"Асфоделовые","category":"Суккуленты","origin":"Пустыня (Южная Африка)","temp":"18–28","light":"3000-7000","humidity":"30–50","watering":"Полностью","soil":"Для суккулентов","ph":"6.0–7.0","petDanger":"Нет","comments":"Небольшой суккулент с мясистыми листьями, покрытыми мелкими белыми пупырками. Идеальна для озеленения столов в офисах. Любит неглубокие, но широкие горшки.","id":14},{"photo":"assets/plants/23.webp","nameRu":"Замиокулькас","nameLat":"Zamioculcas zamiifolia","family":"Ароидные","category":"Декоративно-лиственное, Суккуленты","origin":"Пустыня","temp":"18–26","light":"900–3000","humidity":"30–50","watering":"Полностью, боится залива","soil":"Для суккулентов","ph":"6.0–6.5","petDanger":"Да","comments":"Классика коммерческого озеленения, используется везде благодаря своей неприхотливости и теневыносливости. Листья глянцевые тёмно-зелёные.","id":23},{"photo":"assets/plants/33.webp","nameRu":"Монстера делициоза","nameLat":"Monstera deliciosa","family":"Ароидные","category":"Лианы, Декоративно-лиственное, Крупномеры","origin":"Тропики (Центр. Америка)","temp":"18–26","light":"2500-5000","humidity":"40–60","watering":"на 1/2 горшка","soil":"Универсальный","ph":"5.5–6.5","petDanger":"Да","comments":"Крупное тропическое растение с листьями, рассечёнными на доли и прорези. По факту лиана, но очень большая. Для крупного экземпляра потребуется опора. В интерьере создаёт эффект джунглей.","id":33},{"photo":"assets/plants/62.webp","nameRu":"Фикус Бенджамина","nameLat":"Ficus benjamina","family":"Тутовые","category":"Крупномеры","origin":"Тропики (ЮВА)","temp":"18–26","light":"4000-13000","humidity":"40–60","watering":"на 1/2 горшка","soil":"Универсальный","ph":"6.0–6.5","petDanger":"Да","comments":"Классический вид с мелкими листьями, часто используется в виде штамбовых форм. Может чуть что скинуть все листья, поэтому его прозвали истеричкой. Боится перестановок и сквозняков.","id":62},{"photo":"assets/plants/100.webp","nameRu":"Юкка слоновая","nameLat":"Yucca elephantipes","family":"Спаржевые","category":"Крупномеры, Суккуленты","origin":"Субтропики (Мексика)","temp":"18–26","light":"5000-15000","humidity":"40–60","watering":"Полностью","soil":"Для суккулентов","ph":"6.0–7.0","petDanger":"Да","comments":"Крупномер с жёсткими мечевидными листьями. Выдерживает прямое солнце и засуху. Может достигать 3–4 метров в помещении.","id":100},{"photo":"assets/plants/105.webp","nameRu":"Сенполия (фиалка)","nameLat":"Saintpaulia ionantha","family":"Геснериевые","category":"Цветущие","origin":"Восточная Африка (Танзания, Кения)","temp":"18–24","light":"1500-3500","humidity":"50–65","watering":"на 1/2 горшка","soil":"Универсальный","ph":"6.0–6.5","petDanger":"Нет","comments":"Компактное цветущее растение с бархатистыми листьями и длительным цветением при рассеянном свете. Полив тёплой отстоянной водой в поддон; не мочите розетку и не ставьте на прямое солнце — листья получают ожоги.","id":105}];
+const PROFILES={darkOffice:{light:1200,care:'easy'},livingRoom:{care:'easy'},sunnyWindow:{light:8500},bathroom:{light:1800,humidity:70,care:'humid'},restaurant:{light:2500,care:'easy'},pets:{pets:'safe'},largePlant:{care:'big'}};
+function isLargePlant(p){const c=String(p.category||''),t=p.text;if(/крупномер/i.test(c))return true;if(/(?:суккулент|кактус)/i.test(c))return false;if(/(?:гастер|крассул|аспарагус|алоэ |сансевиер|sansevier|haworthia)/i.test(t))return false;if(/(?:пальм|фикус|ficus|монстера|monstera|драцен|dracaena|юкк|yucca|хове|howea|areca|стрелitz|strelitzia|алоказ)/i.test(c+t))return true;if(/(?:крупномер|интерьерное дерево|крупн(?:ый|ого) акцент|высота\s*(?:1[,.]|[2-9]))/i.test(t))return true;return false;}
+const $=id=>document.getElementById(id); const LS_FAV='plantfit.v2.demo.favs'; let showLessSuitable=false,lastFilterKey='', lastResults=[], compareIds=new Set(), deepLinkPlantId=null, deepLinkHandled=false;
+function nums(s){return (String(s||'').replace(/[–—]/g,'-').match(/\d+(?:[.,]\d+)?/g)||[]).map(x=>+x.replace(',','.'));}
+function toRange(s,fallback=[0,Infinity]){const n=nums(s); if(!n.length)return fallback; return {min:Math.min(...n),max:Math.max(...n),raw:String(s||'')};}
+function mid(r){return (r.min+r.max)/2} function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
+function esc(s){return String(s??'').replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]));}
+function plantSlug(s){return String(s||'').toLowerCase().replace(/['’]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+function petSafeRaw(v){const s=String(v||'').trim().toLowerCase(); if(s.startsWith('нет'))return true; if(s.includes('нетоксич'))return true; return false;}
+function normPlant(p){const category=String(p.category||''); const text=[p.nameRu,p.nameLat,p.family,p.category,p.origin,p.watering,p.soil,p.comments].join(' ').toLowerCase(); return {...p,slug:plantSlug(p.nameLat),lightR:toRange(p.light),humidityR:toRange(p.humidity),tempR:toRange(p.temp),petSafe:petSafeRaw(p.petDanger),categoryList:category.split(',').map(x=>x.trim()).filter(Boolean),text,careEase:/(неприхот|устойчив|офис|сухой воздух|теневынослив|классика коммерческого|выдерживает)/i.test(text)?2:/(капризн|требует|боится|коллекционер|редк)/i.test(text)?0:1};}
+const PLANTS=RAW_PLANTS.map(normPlant);
+const PLANT_BY_SLUG=Object.fromEntries(PLANTS.map(p=>[p.slug,p]));
+const PLANT_BY_ID=Object.fromEntries(PLANTS.map(p=>[p.id,p]));
+function resolvePlantFromParams(params){const slug=(params.get('plant')||'').trim().toLowerCase();const id=params.get('id');if(slug&&PLANT_BY_SLUG[slug])return PLANT_BY_SLUG[slug];if(id!=null&&PLANT_BY_ID[+id])return PLANT_BY_ID[+id];return null;}
+const META={categories:[...new Set(PLANTS.flatMap(p=>p.categoryList))].sort((a,b)=>a.localeCompare(b,'ru')),soils:[...new Set(PLANTS.map(p=>p.soil).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ru'))};
+function within(value,r){return value>=r.min&&value<=r.max} function distScore(value,r,ok,penalty,scale){if(within(value,r))return {points:ok,ok:true,delta:0}; const d=value<r.min?r.min-value:value-r.max; return {points:-Math.min(penalty,d/scale),ok:false,delta:d};}
+function careScore(p,style){const t=p.text, c=p.category; if(style==='any')return {points:0,reason:null}; const tests={forgetful:[/(суккулент|полностью|засух|боится залива|кактус)/i,22,-10,'подходит для редкого полива'],easy:[/(неприхот|устойчив|офис|коммерческ|сухой воздух|теневынослив|выдерживает)/i,22,-6,'неприхотливый сценарий'],humid:[/(влажн|60–70|60-70|60–80|тропик|папоротник)/i,18,-4,'любит повышенную влажность'],flower:[/цветущ/i.test(c),22,-12,'есть потенциал цветения'],big:[isLargePlant(p),22,-14,'крупный интерьерный акцент'],hang:[/(лианы|ампель|подвес|свисающ|фитостен)/i,22,-10,'подходит для подвеса или вертикали'],collector:[/(редк|необычн|коллекц|бархат|pinterest|выразительн|экзотич)/i,18,-3,'выразительный коллекционный вид']}; let test=tests[style]; if(!test)return {points:0,reason:null}; let ok=typeof test[0]==='boolean'?test[0]:test[0].test(t); return {points:ok?test[1]:test[2],reason:ok?test[3]:null};}
+function capIdealScore(score,l,h,t,f,p){if(!l.ok){const lightTol=f.light>1500?200:0;if(l.delta>=(lightTol||1))score=Math.min(score,89);}if(!h.ok){const humTol=f.humidity>=40?15:0;if(h.delta>=(humTol||1))score=Math.min(score,89);}if(!t.ok&&t.delta>=4)score=Math.min(score,89);if(f.category!=='any'&&!p.categoryList.includes(f.category))score=Math.min(score,89);if(f.soil!=='any'&&p.soil!==f.soil)score=Math.min(score,89);return score;}
+function explain(p,f){let score=55,reasons=[],tips=[]; const l=distScore(f.light,p.lightR,30,34,220),h=distScore(f.humidity,p.humidityR,20,24,1.8),t=distScore(f.temp,p.tempR,18,26,1.4); score+=l.points+h.points+t.points; reasons.push(l.ok?'свет попадает в рекомендуемый диапазон':'свет отличается от оптимума на ~'+Math.round(l.delta)+' лк'); reasons.push(h.ok?'влажность подходит':'влажность отличается от оптимума на ~'+Math.round(h.delta)+'%'); reasons.push(t.ok?'температура подходит':'температура отличается от оптимума на ~'+Math.round(t.delta)+'°C'); if(!l.ok)tips.push(f.light<p.lightR.min?'поставьте ближе к окну или добавьте фитолампу':'уберите от прямого солнца / рассейте свет'); if(!h.ok)tips.push(f.humidity<p.humidityR.min?'повысьте влажность: группировка растений, увлажнитель, поддон с керамзитом':'улучшите проветривание и не переувлажняйте субстрат'); if(!t.ok)tips.push(f.temp<p.tempR.min?'избегайте холодного подоконника и сквозняка':'держите дальше от батареи и жаркого солнца'); if(f.pets==='safe'){ if(p.petSafe){score+=22; reasons.push('отмечено как безопаснее для питомцев')} else {score-=120; reasons.push('опасно для питомцев'); tips.push('при животных лучше выбрать безопасную альтернативу')}} if(f.category!=='any'){ if(p.categoryList.includes(f.category)){score+=18; reasons.push('совпадает категория')} else score-=80 } if(f.soil!=='any'){ if(p.soil===f.soil){score+=10; reasons.push('совпадает тип грунта')} else score-=15 } const cs=careScore(p,f.care); score+=cs.points; if(cs.reason)reasons.push(cs.reason); if(p.careEase===2){score+=5; reasons.push('есть признаки простого ухода')} if(p.careEase===0){tips.push('потребуется стабильный уход и наблюдение')} let finalScore=Math.round(clamp(score*100/140,0,100)); finalScore=capIdealScore(finalScore,l,h,t,f,p); return {score:finalScore,reasons:reasons.slice(0,5),tips:[...new Set(tips)].slice(0,4)};}
+function collect(){return {q:$('q').value.trim().toLowerCase(),light:+$('light').value||0,humidity:+$('humidity').value||0,temp:+$('temp').value||0,pets:$('pets').value,care:$('care').value,category:$('category').value,soil:$('soil').value,sort:$('sort').value,onlyFav:$('onlyFav').value};}
+function favs(){try{return new Set(JSON.parse(localStorage.getItem(LS_FAV)||'[]'))}catch{return new Set()}} function saveFavs(s){localStorage.setItem(LS_FAV,JSON.stringify([...s])); $('favCount').textContent=s.size}
+function label(score){return score>=90?['Идеально','ok']:score>=80?['Можно попробовать','ok']:score>=60?['Потребуется дополнительный уход','warn']:['Не рассматривать','danger']}
+function icon(p){return /суккулент|кактус/i.test(p.category)?'🌵':/цвет/i.test(p.category)?'🌺':/лиан/i.test(p.category)?'🌿':/пальм/i.test(p.category)?'🌴':'🪴'}
+
+function pct(x,min,max){return clamp(((x-min)/(max-min))*100,0,100)}
+function rangeVisual(r,current,domainMin,domainMax,unit){
+  const a=pct(r.min,domainMin,domainMax), b=pct(r.max,domainMin,domainMax), v=pct(current,domainMin,domainMax);
+  const ok=within(current,r);
+  const note=ok?'ваше значение внутри диапазона':(current<r.min?'ниже оптимума':'выше оптимума');
+  return `<div class="paramTrack" aria-hidden="true" style="--a:${a.toFixed(2)}%;--w:${Math.max(3,b-a).toFixed(2)}%;--v:${v.toFixed(2)}%"><i></i><em></em></div><small>Ваше: ${esc(current)}${unit}</small><div class="metricNote ${ok?'':'warn'}">${note}</div>`;
+}
+function metricCard(title,value,unit,visual){const cls=title==='Свет'?'meter lightMeter':'meter';return `<div class="${cls}"><span>${title}</span><b><span class="valueText">${esc(value)}</span>${unit?`<span class="unit">${esc(unit.trim())}</span>`:''}</b>${visual||''}</div>`;}
+
+const PHOTO_CACHE_V='20250625';
+function photo(p){const src=p.photo?`${p.photo}?v=${PHOTO_CACHE_V}`:'';return p.photo?`<div class="plantPhoto"><img loading="lazy" src="${src}" alt="${esc(p.nameRu)} — фото растения" onerror="this.parentElement.className='plantPhoto fallback';this.outerHTML='${icon(p)}'"></div>`:`<div class="plantPhoto fallback">${icon(p)}</div>`;}
+function card(p){const [lab,cls]=label(p.score),fs=favs(),fav=fs.has(p.id),comp=compareIds.has(p.id),f=collect(); const lightV=rangeVisual(p.lightR,f.light,0,15000,' лк'),humV=rangeVisual(p.humidityR,f.humidity,10,100,'%'),tempV=rangeVisual(p.tempR,f.temp,5,40,' °C'); const hl=deepLinkPlantId===p.id&&!deepLinkHandled?' plant--highlight':''; return `<article class="card plant${hl}" id="plant-${esc(p.slug)}" data-plant-id="${p.id}" data-plant-slug="${esc(p.slug)}"><button class="fav ${fav?'active':''}" type="button" data-fav="${p.id}" aria-label="${fav?'Убрать из избранного':'В избранное'}">${fav?'★':'☆'}</button>${photo(p)}<div class="plantTop"><div><h3>${esc(p.nameRu)}</h3><div class="lat">${esc(p.nameLat)}</div></div></div><div class="scorebar" aria-hidden="true" style="--w:${p.score}%"><i></i></div><div class="tags"><span class="tag ${cls}">${lab}: ${p.score}</span><span class="tag ${p.petSafe?'ok':'danger'}">${p.petSafe?'pet-friendly':'опасно питомцам'}</span><span class="tag blue">уход: ${p.careEase===2?'лёгкий':p.careEase===1?'средний':'сложнее'}</span></div><div class="meters">${metricCard('Свет',p.light,' лк',lightV)}${metricCard('Влажность',p.humidity,'%',humV)}${metricCard('Температура',p.temp,' °C',tempV)}${metricCard('Полив',p.watering,'','<small>Режим из каталога</small>')}</div><details open><summary>Почему подходит</summary><ul class="reasons">${p.reasons.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details><div class="tips"><b>Советы</b><ul class="reasons">${(p.tips.length?p.tips:['условия близки к оптимальным, наблюдайте адаптацию 2–3 недели']).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><details><summary>Каталог</summary><p class="mini"><b>Категория:</b> ${esc(p.category)}<br><b>Грунт:</b> ${esc(p.soil)} · <b>pH:</b> ${esc(p.ph)}<br><b>Происхождение:</b> ${esc(p.origin)} · <b>Семейство:</b> ${esc(p.family)}</p><p class="mini">${esc(p.comments)||'Без комментариев.'}</p></details><div class="compareRow"><label><input type="checkbox" data-compare="${p.id}" ${comp?'checked':''}> сравнить</label></div></article>`;}
+function filterKey(f){return JSON.stringify({q:f.q,light:f.light,humidity:f.humidity,temp:f.temp,pets:f.pets,care:f.care,category:f.category,soil:f.soil,sort:f.sort,onlyFav:f.onlyFav})}
+function topResultsSubtitle(ideal,rest,expanded){if(!ideal.length&&!rest.length)return'Попробуйте расширить условия.'; if(!ideal.length&&rest.length)return'Идеальных совпадений (90+) нет — можно посмотреть менее подходящие варианты.'; const topScore=Math.max(...ideal.map(p=>p.score)); const tied=ideal.filter(p=>p.score===topScore).sort((a,b)=>a.nameRu.localeCompare(b.nameRu,'ru')); let lead=tied.length===1?`Лучший вариант: ${tied[0].nameRu}, ${topScore} баллов. `:`Лучшие варианты (${topScore} баллов): ${tied.slice(0,3).map(p=>p.nameRu).join(', ')}${tied.length>3?' и другие':''}. `; if(expanded&&rest.length)lead+=`Также показано ${rest.length} с оценкой ниже 90.`; else if(rest.length)lead+=`Ещё ${rest.length} — по кнопке ниже.`; return lead.trim();}
+function render(){const f=collect(); const key=filterKey(f); if(key!==lastFilterKey){showLessSuitable=false; lastFilterKey=key;} const fs=favs(),climateDefault=+f.light===2500&&+f.humidity===50&&+f.temp===22; let arr=PLANTS.filter(p=>!f.q||p.text.includes(f.q)).map(p=>Object.assign({},p,explain(p,f))); if(f.pets==='safe')arr=arr.filter(p=>p.petSafe); if(f.care==='big')arr=arr.filter(p=>isLargePlant(p)); if(f.pets!=='safe'&&f.care!=='big'){if(f.care==='easy'&&climateDefault&&f.pets==='any')arr=arr.filter(p=>p.careEase>=2); else arr=arr.filter(p=>p.score>=60);} if(f.onlyFav==='fav')arr=arr.filter(p=>fs.has(p.id)); if(f.sort==='score')arr.sort((a,b)=>b.score-a.score||a.nameRu.localeCompare(b.nameRu,'ru')); if(f.sort==='name')arr.sort((a,b)=>a.nameRu.localeCompare(b.nameRu,'ru')); if(f.sort==='light')arr.sort((a,b)=>mid(a.lightR)-mid(b.lightR)); if(f.sort==='care')arr.sort((a,b)=>b.careEase-a.careEase||b.score-a.score); const ideal=arr.filter(p=>p.score>=90); const rest=arr.filter(p=>p.score<90); let display=showLessSuitable?[...ideal,...rest]:ideal; if(deepLinkPlantId!=null&&!display.some(p=>p.id===deepLinkPlantId)){const base=PLANTS.find(p=>p.id===deepLinkPlantId); if(base)display=[Object.assign({},base,explain(base,f)),...display.filter(p=>p.id!==deepLinkPlantId)];} lastResults=display; $('cards').innerHTML=display.map(card).join(''); $('shownCount').textContent=display.length; $('safeCount').textContent=arr.filter(p=>p.petSafe).length; if(ideal.length){$('resultTitle').textContent=showLessSuitable&&rest.length?`Показано: ${display.length} (${ideal.length} идеальных)`:`Идеально: ${ideal.length}`;} else {$('resultTitle').textContent=rest.length?'Идеальных совпадений нет':`Найдено: 0 из ${PLANTS.length}`;} $('resultSubtitle').textContent=topResultsSubtitle(ideal,rest,showLessSuitable); const expandEl=$('expandResults'),expandBtn=$('showLessSuitableBtn'),expandNote=$('expandResultsNote'); if(rest.length){expandEl.hidden=false; if(showLessSuitable){expandBtn.textContent='Скрыть менее подходящие растения'; expandNote.textContent=`Дополнительно показано ${rest.length} с оценкой ниже 90.`;} else {expandBtn.textContent=`Показать менее подходящие растения (${rest.length})`; expandNote.textContent='';}} else {expandEl.hidden=true;} const emptyEl=$('empty'); if(!display.length){emptyEl.style.display='block'; emptyEl.querySelector('h2').textContent=ideal.length?'Ничего не найдено':'Идеальных совпадений нет'; emptyEl.querySelector('p').textContent=rest.length?'Ослабьте фильтры или нажмите кнопку ниже, чтобы увидеть менее подходящие варианты.':'Ослабьте фильтр по питомцам, категории или стилю ухода.';} else {emptyEl.style.display='none';} if(deepLinkPlantId!=null&&!deepLinkHandled){const linked=PLANTS.find(p=>p.id===deepLinkPlantId),el=linked&&document.getElementById('plant-'+linked.slug); if(el){deepLinkHandled=true; requestAnimationFrame(()=>{el.scrollIntoView({behavior:'smooth',block:'center'}); el.classList.add('plant--highlight'); setTimeout(()=>el.classList.remove('plant--highlight'),3200);});}} renderCompare();}
+function renderCompare(){const chosen=[...compareIds].map(id=>PLANTS.find(p=>p.id==id)).filter(Boolean); $('comparePanel').style.display=chosen.length?'block':'none'; $('compareGrid').innerHTML=chosen.map(p=>`<div class="compareBox"><b>${esc(p.nameRu)}</b><p>Свет: ${esc(p.light)} лк<br>Влажность: ${esc(p.humidity)}%<br>Полив: ${esc(p.watering)}<br>Грунт: ${esc(p.soil)}<br>Питомцы: ${p.petSafe?'безопаснее':'опасно'}</p></div>`).join('');}
+function applyProfile(name){const p=PROFILES[name]; if(!p)return; ['light','humidity','temp'].forEach(k=>{if(p[k]!=null){$(k).value=p[k];$(k+'Range').value=p[k];}}); $('pets').value=p.pets||'any'; $('care').value=p.care||'any'; $('profile').value=name; updateParamOutputs(); render();}
+function reset(){['q'].forEach(id=>$(id).value=''); $('profile').value='custom'; $('category').value='any'; $('soil').value='any'; $('sort').value='score'; $('onlyFav').value='all'; showLessSuitable=false; applyProfile('livingRoom'); $('profile').value='custom';}
+function updateParamOutputs(){[['light','lightValue'],['humidity','humidityValue'],['temp','tempValue']].forEach(([a,o])=>{const el=$(o);if(el)el.textContent=Number($(a).value).toLocaleString('ru-RU')})}
+function wireFilterTabs(){const tabs=document.querySelectorAll('[data-filters-tab]');const panes=document.querySelectorAll('.filters-pane');tabs.forEach(tab=>{tab.addEventListener('click',()=>{const id=tab.dataset.filtersTab;tabs.forEach(t=>{const on=t===tab;t.classList.toggle('is-active',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1});panes.forEach(p=>{const on=p.id==='filtersPaneRoom'?id==='room':id==='care';p.classList.toggle('is-active',on);p.hidden=!on})})})}
+function wireDual(a,b){$(a).addEventListener('input',()=>{$(b).value=$(a).value;$('profile').value='custom';updateParamOutputs();render()}); $(b).addEventListener('input',()=>{$(a).value=$(b).value;$('profile').value='custom';updateParamOutputs();render()});}
+function toast(t){$('toast').textContent=t; $('toast').classList.add('show'); setTimeout(()=>$('toast').classList.remove('show'),1600)}
+function csv(rows){return rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\n')}
+function runAudit(){let issues=[]; PLANTS.forEach(p=>{if(p.lightR.min<100||p.lightR.max>20000)issues.push(`${p.nameRu}: проверьте свет “${p.light}”`); if(!p.nameRu||!p.nameLat)issues.push(`${p.id}: нет названия`); if(!p.categoryList.length)issues.push(`${p.nameRu}: нет категории`);}); $('auditSummary').textContent=`Проверено ${PLANTS.length} записей. Найдено потенциальных замечаний: ${issues.length}.`; $('auditList').innerHTML=(issues.slice(0,8).map(x=>`<li>${esc(x)}</li>`).join('')||'<li>Критичных замечаний не найдено.</li>')+(issues.length>8?`<li>Ещё ${issues.length-8} замечаний скрыто, чтобы не перегружать экран.</li>`:'');}
+function init(){META.categories.forEach(x=>$('category').insertAdjacentHTML('beforeend',`<option>${esc(x)}</option>`)); META.soils.forEach(x=>$('soil').insertAdjacentHTML('beforeend',`<option>${esc(x)}</option>`)); $('totalCount').textContent=PLANTS.length; $('safeCount').textContent=PLANTS.filter(p=>p.petSafe).length; saveFavs(favs()); wireDual('light','lightRange'); wireDual('humidity','humidityRange'); wireDual('temp','tempRange'); updateParamOutputs(); wireFilterTabs(); ['q','pets','care','category','soil','sort','onlyFav'].forEach(id=>$(id).addEventListener('input',render)); document.querySelectorAll('[data-profile]').forEach(b=>b.addEventListener('click',()=>applyProfile(b.dataset.profile))); $('filterForm').addEventListener('submit',e=>{e.preventDefault();render();$('results').focus()}); $('reset').addEventListener('click',reset); $('showLessSuitableBtn').addEventListener('click',()=>{showLessSuitable=!showLessSuitable; render(); if(showLessSuitable)$('expandResults').scrollIntoView({behavior:'smooth',block:'nearest'});}); $('cards').addEventListener('click',e=>{const fav=e.target.closest('[data-fav]'); if(fav){const s=favs(),id=+fav.dataset.fav; s.has(id)?s.delete(id):s.add(id); saveFavs(s); render(); toast(s.has(id)?'Добавлено в избранное':'Убрано из избранного');}}); $('cards').addEventListener('change',e=>{if(e.target.matches('[data-compare]')){const id=+e.target.dataset.compare; if(e.target.checked&&compareIds.size>=3){e.target.checked=false;toast('Можно сравнить до 3 растений');return} e.target.checked?compareIds.add(id):compareIds.delete(id); renderCompare();}}); $('copyList').addEventListener('click',async()=>{const text=lastResults.slice(0,25).map((p,i)=>`${i+1}. ${p.nameRu} (${p.nameLat}) — ${p.score} баллов; свет ${p.light} лк; влажность ${p.humidity}%; полив: ${p.watering}`).join('\n'); try{await navigator.clipboard.writeText(text);toast('Текст скопирован')}catch{alert(text)}}); $('exportCsv').addEventListener('click',()=>{const rows=[['Название','Латынь','Баллы','Свет','Влажность','Температура','Полив','Грунт','Питомцы'],...lastResults.map(p=>[p.nameRu,p.nameLat,p.score,p.light,p.humidity,p.temp,p.watering,p.soil,p.petSafe?'безопаснее':'опасно'])]; const blob=new Blob([csv(rows)],{type:'text/csv;charset=utf-8'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='plantfit-recommendations.csv'; a.click(); URL.revokeObjectURL(a.href);}); if(window.PlantFitPdf)PlantFitPdf.bind({getResults:()=>lastResults,getFilters:collect,getProfileKey:()=>$('profile').value,photoCacheV:PHOTO_CACHE_V}); runAudit(); const _params=new URLSearchParams(location.search); const _deep=resolvePlantFromParams(_params); if(_deep)deepLinkPlantId=_deep.id; const _qp=_params.get('profile')||localStorage.getItem('plantfit.quickProfile'); if(_qp&&PROFILES[_qp])applyProfile(_qp); render();}
+init();
+</script>
+</body>
+</html>
