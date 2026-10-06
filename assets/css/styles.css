@@ -464,21 +464,39 @@ a {
 }
 
 @media (max-width: 760px) {
-  .site-nav__link--indoor,
-  .site-nav__link--garden {
+  .site-header__inner {
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 0;
+    padding-top: 0.65rem;
+    padding-bottom: 0.45rem;
+    row-gap: 0.35rem;
+  }
+
+  .site-nav {
+    flex: 1 1 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    gap: 0.9rem;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
     display: none;
   }
 
-  .site-nav__link--catalogs {
+  .site-nav__link {
+    flex: 0 0 auto;
+  }
+
+  .site-nav__link--indoor,
+  .site-nav__link--garden {
     display: inline;
   }
 
-  .site-header__inner {
-    min-height: 4.15rem;
-  }
-
   .brand__mark {
-    height: 24px;
+    height: 26px;
   }
 
   .brand__name {

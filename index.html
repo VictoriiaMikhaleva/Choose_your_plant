@@ -38,9 +38,9 @@
       </a>
       <nav class="site-nav" aria-label="Разделы">
         <a class="site-nav__link site-nav__link--catalogs" href="#catalogs">Каталоги</a>
-        <a class="site-nav__link site-nav__link--indoor" href="plant_selector_catalog_v6_photos_lux_fixed.html">Комнатные растения</a>
-        <a class="site-nav__link site-nav__link--garden" href="https://victoriiamikhaleva.github.io/garden_plants/garden_catalog.html">Садовые растения</a>
-        <a class="site-nav__link" href="https://victoriiamikhaleva.github.io/Fitodesigner/">Тренажёр</a>
+        <a class="site-nav__link site-nav__link--indoor" data-route="indoor" href="plant_selector_catalog_v6_photos_lux_fixed.html">Комнатные растения</a>
+        <a class="site-nav__link site-nav__link--garden" data-route="garden" href="https://victoriiamikhaleva.github.io/garden_plants/garden_catalog.html">Садовые растения</a>
+        <a class="site-nav__link" data-route="trainer" href="https://victoriiamikhaleva.github.io/Fitodesigner/">Тренажёр</a>
       </nav>
     </div>
   </header>
@@ -56,17 +56,17 @@
           <h1 id="hero-title">Подбор растений</h1>
           <p class="hero__lead">Каталог и тренажёр насмотренности для дизайнеров, озеленителей и любителей растений.</p>
           <div class="hero__actions">
-            <a class="btn btn--ivory" href="plant_selector_catalog_v6_photos_lux_fixed.html">Каталог комнатных растений</a>
-            <a class="btn btn--green" href="https://victoriiamikhaleva.github.io/garden_plants/garden_catalog.html">Каталог садовых растений</a>
+            <a class="btn btn--ivory" data-route="indoor" href="plant_selector_catalog_v6_photos_lux_fixed.html">Каталог комнатных растений</a>
+            <a class="btn btn--green" data-route="garden" href="https://victoriiamikhaleva.github.io/garden_plants/garden_catalog.html">Каталог садовых растений</a>
           </div>
-          <a class="text-link" href="https://victoriiamikhaleva.github.io/Fitodesigner/">Перейти в тренажёр насмотренности <span class="text-link__arrow" aria-hidden="true">→</span></a>
+          <a class="text-link" data-route="trainer" href="https://victoriiamikhaleva.github.io/Fitodesigner/">Перейти в тренажёр насмотренности <span class="text-link__arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
 
     <section class="worlds" id="catalogs" aria-label="Каталоги">
       <div class="container worlds__grid">
-        <a class="panel panel--indoor" href="plant_selector_catalog_v6_photos_lux_fixed.html">
+        <a class="panel panel--indoor" data-route="indoor" href="plant_selector_catalog_v6_photos_lux_fixed.html">
           <img class="panel__img" src="assets/cards/home-indoor-card.png" alt="" width="2560" height="1440" decoding="async">
           <span class="panel__shade" aria-hidden="true"></span>
           <span class="panel__body">
@@ -75,7 +75,7 @@
             <span class="panel__cta">Открыть каталог <span class="panel__arrow" aria-hidden="true">→</span></span>
           </span>
         </a>
-        <a class="panel panel--garden" href="https://victoriiamikhaleva.github.io/garden_plants/garden_catalog.html">
+        <a class="panel panel--garden" data-route="garden" href="https://victoriiamikhaleva.github.io/garden_plants/garden_catalog.html">
           <img class="panel__img" src="assets/hero/garden-hero.png" alt="" width="1024" height="578" loading="lazy" decoding="async">
           <span class="panel__shade" aria-hidden="true"></span>
           <span class="panel__body">
@@ -93,7 +93,7 @@
           <h2 id="trainer-title">Тренажёр насмотренности</h2>
           <p>Запоминайте растения и быстрее ориентируйтесь в ассортименте.</p>
         </div>
-        <a class="btn btn--ivory" href="https://victoriiamikhaleva.github.io/Fitodesigner/">Начать тренировку</a>
+        <a class="btn btn--ivory" data-route="trainer" href="https://victoriiamikhaleva.github.io/Fitodesigner/">Начать тренировку</a>
       </div>
     </section>
   </main>
@@ -106,5 +106,6 @@
   </footer>
 
   <script src="assets/js/landing.js"></script>
+  <script src="assets/js/routes.js"></script>
 </body>
 </html>

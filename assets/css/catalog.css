@@ -1067,15 +1067,35 @@
 
 /* ——— Responsive ——— */
 @media (max-width: 900px) {
+  .catalog-page .site-header__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.75rem;
+    min-height: 0;
+    padding-top: 0.55rem;
+    padding-bottom: 0.5rem;
+  }
+
   .catalog-page .site-nav {
+    display: flex;
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-left: 0;
+    gap: 0.9rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .catalog-page .site-nav::-webkit-scrollbar {
     display: none;
   }
 
-  .catalog-page .site-header__inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 0.5rem;
+  .catalog-page .site-nav a {
+    flex: 0 0 auto;
+    font-size: 0.82rem;
+    white-space: nowrap;
   }
 
   .catalog-page .brand {
@@ -1198,8 +1218,25 @@
   gap: 0.7rem;
 }
 
+.catalog-page .brand__mark-frame {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  line-height: 0;
+}
+
 .catalog-page .brand__mark {
-  font-size: 1.35rem;
+  display: block;
+  width: auto;
+  height: 26px;
+  max-width: none;
+  object-fit: contain;
+  object-position: center;
+  font-size: 0;
+  background: transparent;
 }
 
 .catalog-page .brand__name {
@@ -1224,8 +1261,13 @@
   color: rgba(251, 249, 243, 0.78);
 }
 
-.catalog-page .site-nav a:hover {
+.catalog-page .site-nav a:hover,
+.catalog-page .site-nav a[aria-current="page"] {
   color: var(--paper);
+}
+
+.catalog-page .site-nav a[aria-current="page"] {
+  box-shadow: inset 0 -1px 0 currentColor;
 }
 
 .catalog-page .site-header .btn.btn-small.btn-ghost {
@@ -1563,3 +1605,122 @@
     gap: 1.25rem;
   }
 }
+
+
+/* вЂ”вЂ”вЂ” Shared filter-panel chrome вЂ”вЂ”вЂ” */
+.catalog-page .filters-panel {
+  border: 1px solid rgba(20, 46, 36, 0.1);
+  border-radius: 22px;
+}
+
+.catalog-page .filters-form__head {
+  padding: 1.25rem 1.25rem 0.85rem;
+}
+
+.catalog-page .filters-search,
+.catalog-page .filters-panes,
+.catalog-page .filters-tabs {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.catalog-page .filters-panes {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.catalog-page .filters-actions {
+  padding: 1rem 1.25rem 1.2rem;
+}
+
+.catalog-page .param-grid {
+  gap: 0;
+}
+
+.catalog-page .param-card {
+  padding: 0.95rem 0 1rem;
+  border-bottom: 1px solid rgba(20, 46, 36, 0.1);
+}
+
+.catalog-page .filters-field {
+  margin-top: 0.85rem;
+  margin-bottom: 0;
+}
+
+.catalog-page .filters-search__input,
+.catalog-page .filters-select,
+.catalog-page .param-card__number,
+.catalog-page select:not(.filters-select) {
+  height: 42px;
+  min-height: 42px;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(20, 46, 36, 0.14);
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+.catalog-page .filters-search__input {
+  padding-left: 2.15rem;
+  padding-right: 0.75rem;
+}
+
+.catalog-page .filters-select,
+.catalog-page select:not(.filters-select) {
+  padding-left: 0.75rem;
+  padding-right: 2rem;
+}
+
+.catalog-page .param-card__number {
+  width: 5.5rem;
+  padding-left: 0.45rem;
+  padding-right: 0.45rem;
+}
+
+.catalog-page .bloom-month,
+.catalog-page .color-group,
+.catalog-page .chip {
+  min-height: 36px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(20, 46, 36, 0.14);
+  border-radius: 12px;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+.catalog-page .filters-actions .btn {
+  height: 42px;
+  min-height: 42px;
+  padding: 0 1.05rem;
+  border-radius: 999px;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+.catalog-page .filters-actions .btn-small,
+.catalog-page .filters-actions__export .btn {
+  height: 36px;
+  min-height: 36px;
+  padding: 0 0.8rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 900px) {
+  .catalog-page .site-header__inner {
+    min-height: 0;
+  }
+
+  .catalog-page .site-nav {
+    gap: 0.9rem;
+  }
+
+  .catalog-page .site-nav a {
+    font-size: 0.82rem;
+  }
+}
+
