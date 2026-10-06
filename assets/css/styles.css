@@ -504,7 +504,7 @@ a {
   }
 
   .hero {
-    align-items: flex-end;
+    align-items: center;
     min-height: 78vh;
     padding: 5.4rem 0 2.15rem;
   }
