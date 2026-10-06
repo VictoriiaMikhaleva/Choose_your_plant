@@ -1,0 +1,241 @@
+/* Нижний контактный блок «Подбор растений». Общая визуальная система страниц. */
+.site-closing {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(22, 60, 45, 0.08);
+  background: #f7f5ee;
+  color: #17231d;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow-x: clip;
+}
+
+.site-closing__disclaimer,
+.site-closing__signature {
+  width: min(40rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.site-closing__disclaimer {
+  padding: 1.6rem 0 0;
+  color: #7b857e;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.site-closing__signature {
+  padding: 1.35rem 0 0;
+  color: #3d5248;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.site-closing__signature p {
+  margin: 0;
+}
+
+.site-closing__partners {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.site-closing__partners a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: 100%;
+  padding: 0.42rem 0.8rem;
+  border: 1px solid rgba(22, 60, 45, 0.12);
+  border-radius: 999px;
+  background: #fff;
+  color: #1f4736;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.site-closing__partners a:hover {
+  border-color: rgba(22, 60, 45, 0.28);
+}
+
+.contact-block {
+  width: min(44rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: clamp(2.75rem, 6vw, 4.75rem) 0 clamp(2rem, 4vw, 2.75rem);
+  text-align: center;
+}
+
+.contact-block__title {
+  margin: 0;
+  color: #17261e;
+  font-size: clamp(1.6rem, 1.15rem + 1.35vw, 2.25rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+}
+
+.contact-block__lead {
+  max-width: 32rem;
+  margin: 0.85rem auto 0;
+  color: #667068;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  width: min(40rem, 100%);
+  margin: 1.7rem auto 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid rgba(22, 60, 45, 0.12);
+  border-radius: 18px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.contact-card:hover {
+  border-color: rgba(22, 60, 45, 0.3);
+}
+
+.contact-card__icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: #eef3ea;
+  color: #1f4736;
+}
+
+.contact-card__icon svg {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+}
+
+.contact-card__body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.contact-card__label {
+  color: #4d6b5a;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.contact-card__value {
+  margin-top: 0.15rem;
+  overflow-wrap: anywhere;
+  color: #17231d;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.011em;
+  line-height: 1.3;
+}
+
+.contact-card__arrow {
+  flex: 0 0 auto;
+  color: #8b948e;
+}
+
+.contact-card__arrow svg {
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.site-closing__bar {
+  border-top: 1px solid rgba(22, 60, 45, 0.08);
+  padding: 1.25rem 1.25rem 1.55rem;
+  text-align: center;
+}
+
+.site-closing__name,
+.site-closing__copy,
+.site-closing__made {
+  margin: 0;
+}
+
+.site-closing__name {
+  color: #1c3328;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.site-closing__copy {
+  margin-top: 0.35rem;
+  color: #6d766f;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.site-closing__made {
+  margin-top: 0.4rem;
+  color: #8a928c;
+  font-size: 0.75rem;
+}
+
+.site-closing__made a {
+  color: #2c5a44;
+  text-decoration: none;
+}
+
+.site-closing__made a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.contact-card:focus-visible,
+.site-closing__partners a:focus-visible,
+.site-closing__made a:focus-visible {
+  outline: 2px solid #1f4736;
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1366px) {
+  .contact-block {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-card,
+  .site-closing__partners a,
+  .site-closing__made a {
+    transition: none;
+  }
+}
