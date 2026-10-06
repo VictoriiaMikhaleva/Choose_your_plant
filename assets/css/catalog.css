@@ -1906,6 +1906,54 @@
   background: transparent;
 }
 
+/* White controls, light sage when selected */
+.catalog-page .filters-search__input,
+.catalog-page .param-card__number,
+.catalog-page .filters-select,
+.catalog-page select:not(.filters-select) {
+  background: #fff;
+  border-color: rgba(20, 46, 36, 0.14);
+  box-shadow: none;
+}
+
+.catalog-page .filters-search__input:focus,
+.catalog-page .param-card__number:focus,
+.catalog-page .filters-select:focus,
+.catalog-page select:not(.filters-select):focus {
+  background: #fff;
+  border-color: rgba(31, 71, 54, 0.4);
+  box-shadow: none;
+  outline: none;
+}
+
+.catalog-page .filters-search__input::placeholder {
+  color: rgba(20, 46, 36, 0.42);
+}
+
+.catalog-quick-btn {
+  background: #fff;
+  border-color: rgba(20, 46, 36, 0.14);
+  color: var(--forest-deep);
+  box-shadow: none;
+}
+
+.catalog-quick-btn:hover {
+  background: var(--sage-soft);
+  border-color: rgba(20, 46, 36, 0.22);
+  color: var(--forest-deep);
+  box-shadow: none;
+  transform: none;
+}
+
+.catalog-quick-btn.is-active,
+.catalog-quick-btn.is-active:hover {
+  background: var(--sage);
+  border-color: rgba(31, 71, 54, 0.45);
+  color: var(--forest-deep);
+  box-shadow: none;
+  transform: none;
+}
+
 @media (max-width: 900px) {
   .catalog-page .wrap {
     padding-left: 20px;
@@ -1915,6 +1963,45 @@
   .catalog-page .layout {
     padding-top: 22px;
   }
+}
+
+.catalog-page .filters-label,
+.catalog-page .param-card__label {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--forest-deep);
+}
+
+.catalog-page .param-card__unit,
+.catalog-page .filters-hint {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-muted);
+}
+
+.catalog-page .param-card__value {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--forest);
+}
+
+.catalog-page .param-card__number,
+.catalog-page .filters-search__input,
+.catalog-page .filters-select,
+.catalog-page select:not(.filters-select) {
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--forest-deep);
 }
 
 
