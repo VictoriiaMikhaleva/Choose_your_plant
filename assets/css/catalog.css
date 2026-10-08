@@ -1108,6 +1108,7 @@
   background: #f6f4ef;
   border: 1px solid rgba(23, 32, 24, 0.08);
   box-shadow: none;
+  overflow: visible;
 }
 
 .catalog-page .paramTrack i {
@@ -1115,6 +1116,11 @@
 }
 
 .catalog-page .paramTrack em {
+  top: -3px;
+  z-index: 1;
+  width: 4px;
+  height: 16px;
+  border-radius: 999px;
   background: #1f4736;
   box-shadow: none;
 }
