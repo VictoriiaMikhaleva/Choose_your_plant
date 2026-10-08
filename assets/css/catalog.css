@@ -693,10 +693,11 @@
 
 .catalog-page .param-card__range {
   --fill: 0%;
+  --range-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='16' viewBox='0 0 4 16'%3E%3Crect width='4' height='16' rx='2' fill='%231f4736'/%3E%3C/svg%3E");
   display: block;
   width: 100%;
   max-width: 100%;
-  height: 14px;
+  height: 22px;
   margin: 0;
   padding: 0;
   accent-color: #1f4736;
@@ -717,14 +718,20 @@
 
 .catalog-page .param-card__range::-webkit-slider-thumb {
   -webkit-appearance: none;
+  appearance: none;
   box-sizing: border-box;
-  width: 14px;
-  height: 14px;
-  margin-top: -5px;
-  border-radius: 50%;
-  background: #1f4736;
-  border: 2px solid #fbf9f3;
+  width: 22px;
+  height: 20px;
+  margin-top: -8px;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: var(--range-mark);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 4px 16px;
   box-shadow: none;
+  cursor: pointer;
 }
 
 .catalog-page .param-card__range::-moz-range-track {
@@ -742,13 +749,54 @@
 }
 
 .catalog-page .param-card__range::-moz-range-thumb {
+  -moz-appearance: none;
+  appearance: none;
   box-sizing: border-box;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #1f4736;
-  border: 2px solid #fbf9f3;
+  width: 22px;
+  height: 20px;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: var(--range-mark);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 4px 16px;
   box-shadow: none;
+  cursor: pointer;
+}
+
+.catalog-page .param-card__range::-ms-track {
+  height: 6px;
+  border: 1px solid rgba(23, 32, 24, 0.08);
+  border-radius: 999px;
+  background: #f6f4ef;
+  color: transparent;
+  box-shadow: none;
+}
+
+.catalog-page .param-card__range::-ms-fill-lower {
+  background: #dce7d7;
+  border-radius: 999px;
+}
+
+.catalog-page .param-card__range::-ms-fill-upper {
+  background: #f6f4ef;
+  border-radius: 999px;
+}
+
+.catalog-page .param-card__range::-ms-thumb {
+  box-sizing: border-box;
+  width: 22px;
+  height: 20px;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: var(--range-mark);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 4px 16px;
+  box-shadow: none;
+  cursor: pointer;
 }
 
 .catalog-page .filters-hint {
@@ -1418,19 +1466,25 @@
   }
 }
 
-.catalog-hero__credit a {
-  color: inherit;
+.catalog-hero__credit a:link,
+.catalog-hero__credit a:visited {
+  color: rgba(226, 232, 214, 0.9);
   font-weight: inherit;
-  text-decoration: underline;
-  text-decoration-color: rgba(251, 249, 243, 0.35);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(226, 232, 214, 0.42);
   text-underline-offset: 0.16em;
 }
 
-.catalog-hero__credit a:hover {
-  text-decoration-color: rgba(251, 249, 243, 0.75);
+.catalog-hero__credit a:hover,
+.catalog-hero__credit a:active {
+  color: rgba(251, 249, 243, 0.98);
+  text-decoration-color: rgba(251, 249, 243, 0.62);
 }
 
 .catalog-hero__credit a:focus-visible {
+  color: rgba(251, 249, 243, 0.98);
+  text-decoration-color: rgba(251, 249, 243, 0.7);
   outline: 2px solid rgba(251, 249, 243, 0.85);
   outline-offset: 3px;
 }
