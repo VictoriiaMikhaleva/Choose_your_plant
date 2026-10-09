@@ -148,6 +148,9 @@
 </div>
 <output class="param-card__value" id="lightValue" for="light lightRange">2500</output>
 </div>
+<p class="param-card__help-row">
+<button type="button" class="param-help-trigger" id="luxHelpTrigger" data-help-id="lux-measure" aria-expanded="false" aria-controls="paramHelp">Что такое люксы и как измерить освещённость?</button>
+</p>
 <div class="param-card__controls">
 <div class="param-card__input-row">
 <input id="light" class="param-card__number" type="number" min="0" max="16000" step="100" value="2500" aria-label="Свет, люкс">
@@ -156,25 +159,22 @@
 <input id="lightRange" class="param-card__range" type="range" min="0" max="16000" step="100" value="2500" aria-label="Свет, шкала">
 </div>
 </div>
-<p class="param-card__help-row">
-<button type="button" class="param-help-trigger" id="luxHelpTrigger" data-help-id="lux-measure" aria-expanded="false" aria-controls="paramHelp">Что такое люксы и как измерить освещённость?</button>
-</p>
 </div>
 <div class="param-card" data-param="humidity">
 <div class="param-card__head">
 <span class="param-card__icon" aria-hidden="true">💧</span>
 <div class="param-card__meta">
-<label class="param-card__label" for="humidity">Влажность</label>
+<label class="param-card__label" for="humidity">Влажность воздуха</label>
 <span class="param-card__unit">%</span>
 </div>
 <output class="param-card__value" id="humidityValue" for="humidity humidityRange">50</output>
 </div>
 <div class="param-card__controls">
 <div class="param-card__input-row">
-<input id="humidity" class="param-card__number" type="number" min="10" max="100" value="50" aria-label="Влажность, проценты">
+<input id="humidity" class="param-card__number" type="number" min="10" max="100" value="50" aria-label="Влажность воздуха, проценты">
 </div>
 <div class="param-card__track">
-<input id="humidityRange" class="param-card__range" type="range" min="10" max="100" value="50" aria-label="Влажность, шкала">
+<input id="humidityRange" class="param-card__range" type="range" min="10" max="100" value="50" aria-label="Влажность воздуха, шкала">
 </div>
 </div>
 </div>
