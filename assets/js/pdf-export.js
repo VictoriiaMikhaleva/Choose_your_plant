@@ -126,7 +126,9 @@
   function renderPlantCard(plant) {
     const petLine = plant.petSafe
       ? "🐾 Pet-friendly"
-      : "🐾 Опасно для питомцев";
+      : /^не подтверждено/i.test(String(plant.petDanger || "").trim())
+        ? "🐾 Безопасность для питомцев не подтверждена"
+        : "🐾 Опасно для питомцев";
     const img = plant.photo
       ? `<img src="${esc(photoSrc(plant.photo))}" alt="">`
       : `<span aria-hidden="true">🌿</span>`;
