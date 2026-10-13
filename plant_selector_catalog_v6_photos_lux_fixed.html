@@ -93,7 +93,7 @@
     <p class="catalog-hero__credit">
       <span class="catalog-hero__credit-line">На создание каталога комнатных растений меня вдохновило обучение у Елены Носовой.</span>
       <span class="catalog-hero__credit-offer">
-        <a class="catalog-hero__credit-link" href="https://green-therapy.ru/onlineozelenitel?gcpc=84b82" target="_blank" rel="sponsored noopener noreferrer">Скидка 5 000 ₽ на обучение</a><span class="catalog-hero__credit-sep"> · </span><span class="catalog-hero__credit-promo">Партнёрский промокод <span class="catalog-hero__promo-code">Partner384C6FC4</span></span>
+        <span class="catalog-hero__discount-wrap"><a class="catalog-hero__credit-link" href="https://green-therapy.ru/onlineozelenitel" target="_blank" rel="sponsored noopener noreferrer">Скидка 5 000 ₽ на обучение</a><span class="catalog-hero__credit-sep" aria-hidden="true"> · </span></span><span class="catalog-hero__credit-promo">Партнёрский промокод <span class="catalog-hero__promo-code" id="partnerPromoCode">Partner384C6FC4</span><button type="button" class="catalog-hero__copy-btn" id="copyPartnerPromo" aria-label="Скопировать промокод"><svg class="catalog-hero__copy-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="5.25" y="5.25" width="8.5" height="8.5" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M3.6 10.6V3.85A1.35 1.35 0 0 1 4.95 2.5h6.55" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/></svg><span class="catalog-hero__copy-status" id="copyPartnerPromoStatus" aria-live="polite"></span></button></span>
       </span>
     </p>
   </div>
@@ -453,7 +453,46 @@ function createParameterHelp(){
   });
   return {open:openHelp, close:closeHelp};
 }
-function init(){META.categories.forEach(x=>$('category').insertAdjacentHTML('beforeend',`<option>${esc(x)}</option>`)); META.soils.forEach(x=>$('soil').insertAdjacentHTML('beforeend',`<option>${esc(x)}</option>`)); $('totalCount').textContent=PLANTS.length; $('safeCount').textContent=PLANTS.filter(p=>p.petSafe).length; saveFavs(favs()); wireDual('light','lightRange'); wireDual('humidity','humidityRange'); wireDual('temp','tempRange'); updateParamOutputs(); wireFilterTabs(); createParameterHelp(); ['q','pets','care','category','soil','sort','onlyFav'].forEach(id=>$(id).addEventListener('input',render)); document.querySelectorAll('[data-profile]').forEach(b=>b.addEventListener('click',()=>applyProfile(b.dataset.profile))); $('filterForm').addEventListener('submit',e=>{e.preventDefault();render();$('results').focus()}); $('reset').addEventListener('click',reset); $('showLessSuitableBtn').addEventListener('click',()=>{showLessSuitable=!showLessSuitable; render(); if(showLessSuitable)$('expandResults').scrollIntoView({behavior:'smooth',block:'nearest'});}); $('cards').addEventListener('click',e=>{const fav=e.target.closest('[data-fav]'); if(fav){const s=favs(),id=+fav.dataset.fav; s.has(id)?s.delete(id):s.add(id); saveFavs(s); render(); toast(s.has(id)?'Добавлено в избранное':'Убрано из избранного');}}); $('cards').addEventListener('change',e=>{if(e.target.matches('[data-compare]')){const id=+e.target.dataset.compare; if(e.target.checked&&compareIds.size>=3){e.target.checked=false;toast('Можно сравнить до 3 растений');return} e.target.checked?compareIds.add(id):compareIds.delete(id); renderCompare();}}); $('copyList').addEventListener('click',async()=>{const text=lastResults.slice(0,25).map((p,i)=>`${i+1}. ${p.nameRu} (${p.nameLat}) — ${p.score} баллов; свет ${p.light} лк; влажность ${p.humidity}%; полив: ${p.watering}`).join('\n'); try{await navigator.clipboard.writeText(text);toast('Текст скопирован')}catch{alert(text)}}); $('exportCsv').addEventListener('click',()=>{const rows=[['Название','Латынь','Баллы','Свет','Влажность','Температура','Полив','Грунт','Питомцы'],...lastResults.map(p=>[p.nameRu,p.nameLat,p.score,p.light,p.humidity,p.temp,p.watering,p.soil,p.petSafe?'безопаснее':petUnconfirmed(p)?'не подтверждено':'опасно'])]; const blob=new Blob([csv(rows)],{type:'text/csv;charset=utf-8'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='plantfit-recommendations.csv'; a.click(); URL.revokeObjectURL(a.href);}); if(window.PlantFitPdf)PlantFitPdf.bind({getResults:()=>lastResults,getFilters:collect,getProfileKey:()=>$('profile').value,photoCacheV:PHOTO_CACHE_V}); runAudit(); const _params=new URLSearchParams(location.search); const _deep=resolvePlantFromParams(_params); if(_deep)deepLinkPlantId=_deep.id; const _qp=_params.get('profile')||localStorage.getItem('plantfit.quickProfile'); if(_qp&&PROFILES[_qp])applyProfile(_qp); render();}
+const PARTNER_PROMO_CODE='Partner384C6FC4';
+function copyTextFallback(text){
+  const ta=document.createElement('textarea');
+  ta.value=text;
+  ta.setAttribute('readonly','');
+  ta.style.cssText='position:fixed;left:-9999px;top:0';
+  document.body.appendChild(ta);
+  ta.select();
+  let ok=false;
+  try{ok=document.execCommand('copy')}catch(err){}
+  document.body.removeChild(ta);
+  return ok;
+}
+async function copyPartnerPromoCode(){
+  const btn=$('copyPartnerPromo');
+  const status=$('copyPartnerPromoStatus');
+  if(!btn||!status)return;
+  let ok=false;
+  try{
+    if(navigator.clipboard&&window.isSecureContext){
+      await navigator.clipboard.writeText(PARTNER_PROMO_CODE);
+      ok=true;
+    }else{
+      ok=copyTextFallback(PARTNER_PROMO_CODE);
+    }
+  }catch(err){
+    ok=copyTextFallback(PARTNER_PROMO_CODE);
+  }
+  if(!ok)return;
+  status.textContent='Скопировано';
+  btn.classList.add('is-copied');
+  clearTimeout(copyPartnerPromoCode._t);
+  copyPartnerPromoCode._t=setTimeout(()=>{status.textContent='';btn.classList.remove('is-copied')},1600);
+}
+function wirePartnerPromo(){
+  const btn=$('copyPartnerPromo');
+  if(!btn)return;
+  btn.addEventListener('click',copyPartnerPromoCode);
+}
+function init(){wirePartnerPromo();META.categories.forEach(x=>$('category').insertAdjacentHTML('beforeend',`<option>${esc(x)}</option>`)); META.soils.forEach(x=>$('soil').insertAdjacentHTML('beforeend',`<option>${esc(x)}</option>`)); $('totalCount').textContent=PLANTS.length; $('safeCount').textContent=PLANTS.filter(p=>p.petSafe).length; saveFavs(favs()); wireDual('light','lightRange'); wireDual('humidity','humidityRange'); wireDual('temp','tempRange'); updateParamOutputs(); wireFilterTabs(); createParameterHelp(); ['q','pets','care','category','soil','sort','onlyFav'].forEach(id=>$(id).addEventListener('input',render)); document.querySelectorAll('[data-profile]').forEach(b=>b.addEventListener('click',()=>applyProfile(b.dataset.profile))); $('filterForm').addEventListener('submit',e=>{e.preventDefault();render();$('results').focus()}); $('reset').addEventListener('click',reset); $('showLessSuitableBtn').addEventListener('click',()=>{showLessSuitable=!showLessSuitable; render(); if(showLessSuitable)$('expandResults').scrollIntoView({behavior:'smooth',block:'nearest'});}); $('cards').addEventListener('click',e=>{const fav=e.target.closest('[data-fav]'); if(fav){const s=favs(),id=+fav.dataset.fav; s.has(id)?s.delete(id):s.add(id); saveFavs(s); render(); toast(s.has(id)?'Добавлено в избранное':'Убрано из избранного');}}); $('cards').addEventListener('change',e=>{if(e.target.matches('[data-compare]')){const id=+e.target.dataset.compare; if(e.target.checked&&compareIds.size>=3){e.target.checked=false;toast('Можно сравнить до 3 растений');return} e.target.checked?compareIds.add(id):compareIds.delete(id); renderCompare();}}); $('copyList').addEventListener('click',async()=>{const text=lastResults.slice(0,25).map((p,i)=>`${i+1}. ${p.nameRu} (${p.nameLat}) — ${p.score} баллов; свет ${p.light} лк; влажность ${p.humidity}%; полив: ${p.watering}`).join('\n'); try{await navigator.clipboard.writeText(text);toast('Текст скопирован')}catch{alert(text)}}); $('exportCsv').addEventListener('click',()=>{const rows=[['Название','Латынь','Баллы','Свет','Влажность','Температура','Полив','Грунт','Питомцы'],...lastResults.map(p=>[p.nameRu,p.nameLat,p.score,p.light,p.humidity,p.temp,p.watering,p.soil,p.petSafe?'безопаснее':petUnconfirmed(p)?'не подтверждено':'опасно'])]; const blob=new Blob([csv(rows)],{type:'text/csv;charset=utf-8'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='plantfit-recommendations.csv'; a.click(); URL.revokeObjectURL(a.href);}); if(window.PlantFitPdf)PlantFitPdf.bind({getResults:()=>lastResults,getFilters:collect,getProfileKey:()=>$('profile').value,photoCacheV:PHOTO_CACHE_V}); runAudit(); const _params=new URLSearchParams(location.search); const _deep=resolvePlantFromParams(_params); if(_deep)deepLinkPlantId=_deep.id; const _qp=_params.get('profile')||localStorage.getItem('plantfit.quickProfile'); if(_qp&&PROFILES[_qp])applyProfile(_qp); render();}
 init();
 </script>
 </body>

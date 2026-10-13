@@ -1468,27 +1468,107 @@
 .catalog-hero__credit-line,
 .catalog-hero__credit-offer,
 .catalog-hero__credit-promo {
-  display: block;
   line-height: 1.45;
   overflow-wrap: anywhere;
 }
 
 .catalog-hero__credit-line {
+  display: block;
   color: rgba(251, 249, 243, 0.62);
   font-size: 0.84rem;
   font-weight: 400;
 }
 
 .catalog-hero__credit-offer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.35rem;
+  row-gap: 0.18rem;
+  max-width: 100%;
   color: rgba(251, 249, 243, 0.86);
   font-size: 0.84rem;
   font-weight: 400;
+}
+
+.catalog-hero__discount-wrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 0;
+}
+
+.catalog-hero__credit-sep {
+  white-space: nowrap;
+}
+
+.catalog-hero__credit-promo {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.22rem 0.38rem;
+  min-width: 0;
+  position: relative;
 }
 
 .catalog-hero__promo-code {
   font-weight: 500;
   letter-spacing: 0.02em;
   user-select: all;
+  white-space: nowrap;
+}
+
+.catalog-hero__copy-btn {
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: rgba(226, 232, 214, 0.78);
+  cursor: pointer;
+}
+
+.catalog-hero__copy-btn:hover,
+.catalog-hero__copy-btn:active {
+  color: rgba(251, 249, 243, 0.98);
+  background: rgba(251, 249, 243, 0.08);
+}
+
+.catalog-hero__copy-btn:focus-visible {
+  color: rgba(251, 249, 243, 0.98);
+  outline: 2px solid rgba(251, 249, 243, 0.85);
+  outline-offset: 2px;
+}
+
+.catalog-hero__copy-icon {
+  display: block;
+  width: 0.92rem;
+  height: 0.92rem;
+}
+
+.catalog-hero__copy-status {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.18rem);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(251, 249, 243, 0.92);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.catalog-hero__copy-btn.is-copied .catalog-hero__copy-status {
+  opacity: 1;
 }
 
 .catalog-hero__credit a:link,
@@ -1517,6 +1597,11 @@
 @media (max-width: 768px) {
   .catalog-hero__credit {
     max-width: 100%;
+  }
+
+  .catalog-hero__copy-btn {
+    width: 2.75rem;
+    height: 2.75rem;
   }
 }
 
