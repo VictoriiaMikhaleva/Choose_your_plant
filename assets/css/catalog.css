@@ -1459,15 +1459,18 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.18rem;
-  max-width: 34rem;
+  gap: 0.22rem;
+  max-width: 38rem;
+  min-width: 0;
   margin: 1.05rem 0 0;
 }
 
 .catalog-hero__credit-line,
-.catalog-hero__credit-name {
+.catalog-hero__credit-offer,
+.catalog-hero__credit-promo {
   display: block;
   line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .catalog-hero__credit-line {
@@ -1476,46 +1479,25 @@
   font-weight: 400;
 }
 
-.catalog-hero__credit-name {
-  color: rgba(251, 249, 243, 0.94);
-  font-size: 0.95rem;
-  font-weight: 500;
-  white-space: nowrap;
+.catalog-hero__credit-offer {
+  color: rgba(251, 249, 243, 0.86);
+  font-size: 0.84rem;
+  font-weight: 400;
 }
 
-@media (max-width: 640px) {
-  .catalog-hero__credit {
-    display: block;
-    max-width: none;
-  }
-
-  .catalog-hero__credit-line,
-  .catalog-hero__credit-name {
-    display: inline;
-    white-space: normal;
-  }
-
-  .catalog-hero__credit-line::after {
-    content: " ";
-  }
-
-  .catalog-hero__credit-sep {
-    display: none;
-  }
-
-  .catalog-hero__credit-name a {
-    display: block;
-    margin-top: 0.12rem;
-  }
+.catalog-hero__promo-code {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  user-select: all;
 }
 
 .catalog-hero__credit a:link,
 .catalog-hero__credit a:visited {
-  color: rgba(226, 232, 214, 0.9);
+  color: rgba(226, 232, 214, 0.92);
   font-weight: inherit;
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
-  text-decoration-color: rgba(226, 232, 214, 0.42);
+  text-decoration-color: rgba(226, 232, 214, 0.38);
   text-underline-offset: 0.16em;
 }
 
@@ -1530,6 +1512,12 @@
   text-decoration-color: rgba(251, 249, 243, 0.7);
   outline: 2px solid rgba(251, 249, 243, 0.85);
   outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .catalog-hero__credit {
+    max-width: 100%;
+  }
 }
 
 .catalog-hero__title {
