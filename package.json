@@ -5,6 +5,7 @@
   "description": "PlantFit Pro landing + plant selector catalog",
   "scripts": {
     "start": "npx serve .",
+    "test:search": "node scripts/test-indoor-search.mjs",
     "dev": "npx serve .",
     "photos:normalize": "node scripts/normalize-plant-photos.js",
     "photos:renormalize": "node scripts/renormalize-all-photos.js",
