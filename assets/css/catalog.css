@@ -946,6 +946,11 @@
 }
 
 /* ——— Results bar ——— */
+.catalog-page .results,
+.catalog-page #cards {
+  overflow-anchor: none;
+}
+
 .catalog-page .summary {
   padding: 0.35rem 0 1rem;
   margin-bottom: 1.15rem;
@@ -1191,6 +1196,7 @@
 
 /* ——— Footer & toast ——— */
 .catalog-footer {
+  overflow-anchor: none;
   padding: 2rem 0 2.5rem;
   border-top: 1px solid rgba(23, 32, 24, 0.06);
   background: transparent;
